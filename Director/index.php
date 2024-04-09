@@ -41,7 +41,7 @@ require_once "header.php";
                                                 <td class="align-middle">
                                                     <div class="d-flex align-items-center">
                                                         <div class="me-4">
-                                                            <img src="assets/images/users/avatar-7.jpg" alt=""
+                                                            <img src="../assets/images/users/avatar-7.jpg" alt=""
                                                                 class="avatar-sm rounded-circle">
                                                         </div>
                                                         <div>
@@ -59,7 +59,7 @@ require_once "header.php";
                                                 <td class="align-middle">
                                                     <div class="d-flex align-items-center">
                                                         <div class="me-4">
-                                                            <img src="assets/images/users/avatar-3.jpg" alt=""
+                                                            <img src="../assets/images/users/avatar-3.jpg" alt=""
                                                                 class="avatar-sm rounded-circle">
                                                         </div>
                                                         <div>
@@ -77,7 +77,7 @@ require_once "header.php";
                                                 <td class="align-middle">
                                                     <div class="d-flex align-items-center">
                                                         <div class="me-4">
-                                                            <img src="assets/images/users/avatar-4.jpg" alt=""
+                                                            <img src="../assets/images/users/avatar-4.jpg" alt=""
                                                                 class="avatar-sm rounded-circle">
                                                         </div>
                                                         <div>

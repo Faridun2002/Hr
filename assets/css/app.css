@@ -1395,9 +1395,10 @@ body[data-layout=detached] .page-title-box .breadcrumb-item.active, body[data-la
   width: 2rem;
 }
 
+
 .avatar-sm {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
 }
 
 .avatar-md {

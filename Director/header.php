@@ -12,20 +12,20 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico">
 
     <!-- DataTables -->
-    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet"
+    <link href="../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet"
         type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
+    <link href="../assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
         type="text/css" />
 
     <!-- Bootstrap Css -->
-    <link href="assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
-    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 </head>
 
 <body data-layout="detached" data-topbar="colored">
@@ -55,7 +55,7 @@
                                     id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                     <img class="rounded-circle header-profile-user"
-                                        src="assets/images/users/avatar-2.jpg" alt="Header Avatar">
+                                        src="../assets/images/users/avatar-2.jpg" alt="Header Avatar">
                                     <span class="d-none d-xl-inline-block ms-1">Камол</span>
                                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                                 </button>
@@ -119,7 +119,7 @@
 
                     <div class="user-wid text-center py-4">
                         <div class="user-img">
-                            <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-md mx-auto rounded-circle">
+                            <img src="../assets/images/users/avatar-2.jpg" alt="" class="avatar-md mx-auto rounded-circle">
                         </div>
 
                         <div class="mt-3">
