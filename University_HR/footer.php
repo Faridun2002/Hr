@@ -6,41 +6,16 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="text-sm-end d-none d-sm-block">
-                                <!-- Управление персоналом -->
                             </div>
                         </div>
                     </div>
                 </div>
             </footer>
         </div>
-        <!-- end main content-->
-
     </div>
-    <!-- END layout-wrapper -->
-
 </div>
-<!-- end container-fluid -->
 
-<!-- Right Sidebar -->
-
-<!-- <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-    <div class="offcanvas-body rightbar">
-        <div class="right-bar">
-            <div data-simplebar class="h-100">
-                <div class="rightbar-title px-3 py-4">
-                    <a href="javascript:void(0);" class="right-bar-toggle float-end" data-bs-dismiss="offcanvas" aria-label="Close" >
-                        <i class="mdi mdi-close noti-icon"></i>
-                    </a>
-                    <h5 class="m-0">Settings</h5>
-                </div>
-            
-            </div>
-            <!-- end slimscroll-menu-->
-        <!-- </div>
-    </div>
-   
-</div>  -->
-
+</div> 
 
 <!-- /Right-bar -->
 

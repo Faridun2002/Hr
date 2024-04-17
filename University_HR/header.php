@@ -4,12 +4,18 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Starter | Qovex - Admin & Dashboard Template</title>
+    <title>Главная страница</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+
+
+    <!-- Bootstrap Css -->
+    <link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <!-- App Css-->
+    <link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     <!-- DataTables -->
     <link href="../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
@@ -20,19 +26,19 @@
     <link href="../assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
         type="text/css" />
 
+
     <!-- Bootstrap Css -->
     <link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
     <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body data-layout="detached" data-topbar="colored">
 
 
-
-    <!-- <body data-layout="horizontal" data-topbar="dark"> -->
 
     <div class="container-fluid">
         <!-- Begin page -->
@@ -56,53 +62,42 @@
                                     aria-expanded="false">
                                     <img class="rounded-circle header-profile-user"
                                         src="../assets/images/users/avatar-2.jpg" alt="Header Avatar">
-                                    <span class="d-none d-xl-inline-block ms-1">Камол</span>
+                                    <span class="d-none d-xl-inline-block ms-1">Админ</span>
                                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
-                                    <!-- item-->
-                                    <!-- <a class="dropdown-item" href="profile.php"><i
-                                            class="bx bx-user font-size-16 align-middle me-1"></i>
-                                        Профиль</a>
-                                    <a class="dropdown-item d-block" href="setting.html"><span
-                                            class="badge bg-success float-end"></span><i
-                                            class="bx bx-wrench font-size-16 align-middle me-1"></i> Настройка</a>
-                                    <div class="dropdown-divider"></div> -->
+
                                     <a class="dropdown-item text-danger" href="login.php"><i
                                             class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
                                         Выйти</a>
                                 </div>
                             </div>
-
-                            <!-- <div class="dropdown d-inline-block">
-                                    <button  type="button" class="btn header-item noti-icon right-bar-toggle waves-effect" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                                        <i class="mdi mdi-settings-outline"></i>
-                                    </button>
-                                </div> -->
-
                         </div>
 
                         <!-- LOGO -->
-                        <!-- <div>
+                        <div>
 
                             <div class="navbar-brand-box">
-                                <a href="index.html" class="logo logo-dark">
+                                <a href="index.php" class="logo logo-dark">
                                     <span class="logo-sm">
-                                        <img src="assets/images/logo-sm.png" alt="" height="20">
+                                        <img src="../assets/images/logo-sm.png" alt="" height="20">
                                     </span>
                                     <span class="logo-lg">
-                                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                                        <img src="../assets/images/logo-dark.png" alt="" height="17">
                                     </span>
                                 </a>
 
-                                <a href="index.html" class="logo logo-light">
+                                <a href="index.php" class="logo logo-light" style="margin-left: 65px;">
                                     <span class="logo-sm">
-                                        <img src="assets/images/logo-sm.png" alt="" height="20">
+                                        <img src="../assets/images/LogoEX.png" alt="" height="20"
+                                            style="border-radius: 50%;">
                                     </span>
                                     <span class="logo-lg">
-                                        <img src="assets/images/logo-light.png" alt="" height="19">
+                                        <img src="../assets/images/LogoEX.png" alt="" height="57"
+                                            style="border-radius: 10%;">
                                     </span>
                                 </a>
+
                             </div>
 
                             <button type="button"
@@ -111,7 +106,7 @@
                                 <i class="fa fa-fw fa-bars"></i>
                             </button>
                         </div>
-                    </div> -->
+                    </div>
             </header> <!-- ========== Left Sidebar Start ========== -->
             <div class="vertical-menu">
 
@@ -119,13 +114,14 @@
 
                     <div class="user-wid text-center py-4">
                         <div class="user-img">
-                            <img src="../assets/images/users/avatar-2.jpg" alt="" class="avatar-md mx-auto rounded-circle">
+                            <img src="../assets/images/users/avatar-2.jpg" alt=""
+                                class="avatar-md mx-auto rounded-circle">
                         </div>
 
                         <div class="mt-3">
 
-                            <a href="#" class="text-reset fw-medium font-size-16">Шарипов Камол</a>
-                            <p class="text-muted mt-1 mb-0 font-size-13">Директор</p>
+                            <a href="#" class="text-reset fw-medium font-size-16">Админ</a>
+                            <p class="text-muted mt-1 mb-0 font-size-13">Админстратор</p>
 
                         </div>
                     </div>
@@ -144,11 +140,18 @@
                             </li>
 
                             <li>
-                                <a href="employee.php" class="waves-effect">
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-group"></i>
                                     <span>Сотрудники</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="dir-employee.php">Список сотрудников</a></li>
+                                    <li><a href="add-employee.php">Добавить сотрудника</a></li>
+                                    <li><a href="edit-employee.php">Управлять сотрудниками</a></li>
+                                </ul>
                             </li>
+
+
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -156,25 +159,58 @@
                                     <span>Заявки</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="leave.php">Доступные заявки</a></li>
-                                    <li><a href="list-leave.php">Посмотреть список всех заявок</a></li>
+                                    <li><a href="leave.php">Посмотреть заявки</a></li>
+                                    <li><a href="list-leave.php">Список заявок</a></li>
+                                    <li><a href="emp-leave.php">Отправить заявку</a></li>
+                                    <li><a href="status-leave.php">Статус заявки</a></li>
                                 </ul>
                             </li>
 
-                     
                             <li>
-                                <a href="plan.php" class="waves-effect">
-                                    <i class="mdi mdi-airplay"></i>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bx-task"></i>
                                     <span>План</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="add-plan.php">Создать план</a></li>
+                                    <li><a href="approve-plan.php">Утвердить план</a></li>
+                                    <li><a href="plan.php">Текущий план</a></li>
+                                    <li><a href="select-plan.php">Выбрать план</a></li>
+                                    <li><a href="zadacha-plan.php">Отправить выполненные задачи</a></li>
+                                </ul>
                             </li>
-<!-- 
+
                             <li>
-                                <a href="login.php" class="waves-effect">
-                                    <i class="bx bx-log-out"></i>
-                                    <span>Выйти</span>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bxs-briefcase"></i>
+                                    <span>Вакансия</span>
                                 </a>
-                            </li> -->
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="add-vacancies.php">Добавить вакансию</a></li>
+                                    <li><a href="vacancies.php">Посмотреть вакансию</a></li>
+                                    <li><a href="edit-vacancies.php">Редактировать вакансию</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bx-list-check"></i>
+                                    <span>Обучение</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="ekzamen.php">Экзамен</a></li>
+                                    <li><a href="anketirovanie.php">Анкетирование</a></li>
+                                    <li><a href="attestaticy.php">Аттестация</a></li>
+                                </ul>
+                            </li>
+
+
+                            <li>
+                                <a href="profile.php" class="waves-effect">
+                                    <i class="bx bxs-user-detail"></i>
+                                    <span>Профиль</span>
+                                </a>
+                            </li>
 
                     </div>
                     <!-- Sidebar -->
