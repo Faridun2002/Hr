@@ -156,7 +156,7 @@
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-paper-plane"></i>
-                                    <span>Заявки</span>
+                                    <span>Заявление</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
                                     <li><a href="leave.php">Посмотреть заявки</a></li>

@@ -21,21 +21,32 @@ require_once "header.php";
                 <div class="card">
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-dark mb-0">
-                                <h3>Рейтинг сотрудников</h3>
+                            <h3>Рейтинг всех сотрудников</h3>
 
-                                <div class="table-responsive">
-                                    <table class="table mb-0">
-                                        <thead>
-                                            <tr>
-                                                <th>№</th>
-                                                <th class="text-center">ФИО</th>
-                                                <th>Степень</th>
-                                                <th>Кредит</th>
-                                                <th>Баллы</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
+                            <div class="btn-group mb-3 d-flex justify-content-end">
+                                <button type="button" class="btn btn-primary filterBtn" data-filter="all">Все</button>
+                                <button type="button" class="btn btn-primary filterBtn"
+                                    data-filter="Преподаватели">Преподаватели</button>
+                                <button type="button" class="btn btn-primary filterBtn" data-filter="Доктор наук">Доктор
+                                    наук</button>
+                                <button type="button" class="btn btn-primary filterBtn"
+                                    data-filter="Доценты">Доценты</button>
+                            </div>
+
+
+                            <div class="table-responsive">
+                                <table id="datatable" class="table table-bordered dt-responsive nowrap"
+                                    style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>№</th>
+                                            <th class="text-center">ФИО</th>
+                                            <th>Степень</th>
+                                            <th>Кредит</th>
+                                            <th>Баллы</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
                                         <?php
                                                 // Database connection parameters
                                                 $servername = "localhost"; // Change this to your MySQL server hostname
@@ -91,13 +102,51 @@ require_once "header.php";
                                                 $conn->close();
                                             ?>
 
-                                        </tbody>
-                                    </table>
-                                </div>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Подключение jQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <!-- Подключение библиотеки DataTables -->
+            <script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
+
+            <script>
+            $(document).ready(function() {
+                var table = $('#datatable').DataTable({
+                    "language": {
+                        "lengthMenu": "Показать _MENU_ записей на странице",
+                        "zeroRecords": "Ничего не найдено",
+                        "info": "Показано с _START_ по _END_ из _TOTAL_ записей",
+                        "infoEmpty": "Показано с 0 по 0 из 0 записей",
+                        "infoFiltered": "(отфильтровано из _MAX_ записей)",
+                        "search": "Поиск:",
+                        "paginate": {
+                            "first": "Первая",
+                            "last": "Последняя",
+                            "next": "Следующая",
+                            "previous": "Предыдущая"
+                        }
+                    }
+                });
+
+                // Обработчик события нажатия кнопок фильтрации
+                $('.filterBtn').on('click', function() {
+                    var filterValue = $(this).data('filter');
+
+                    if (filterValue === 'all') {
+                        table.columns(2).search('').draw();
+                    } else {
+                        table.columns(2).search(filterValue).draw();
+                    }
+                });
+            });
+            </script>
+
+
             <?php
 require_once "footer.php";
 ?>

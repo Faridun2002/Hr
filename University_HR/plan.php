@@ -23,6 +23,10 @@ require_once "header.php";
             <div class="card-body">
                 <h3>Список планов</h3>
                 <div class="table-responsive">
+               
+                <h5 class="text-center">Учебный план 2024</h5>
+
+                    
                     <table class="table mb-0 table-bordered"> <!-- Добавлен класс table-bordered -->
                         <thead class="table-light">
                             <tr>
