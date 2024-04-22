@@ -16,15 +16,12 @@
 
         <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
 
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="../styles/css/bootstrap.min.css" rel="stylesheet">
 
-        <link href="css/bootstrap-icons.css" rel="stylesheet">
-
-        <link href="css/owl.carousel.min.css" rel="stylesheet">
-
-        <link href="css/owl.theme.default.min.css" rel="stylesheet">
-
-        <link href="css/tooplate-gotto-job.css" rel="stylesheet">
+        <link href="../styles/css/bootstrap-icons.css" rel="stylesheet">
+        <link href="../styles/css/owl.carousel.min.css" rel="stylesheet">
+        <link href="../styles/css/owl.theme.default.min.css" rel="stylesheet">
+        <link href="../styles/css/tooplate-gotto-job.css" rel="stylesheet">
         
 <!--
 
@@ -264,11 +261,11 @@ document.getElementById("applicationButton2").addEventListener("click", function
 
 
         <!-- JAVASCRIPT FILES -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/owl.carousel.min.js"></script>
-        <script src="js/counter.js"></script>
-        <script src="js/custom.js"></script>
+        <script src="../styles/js/jquery.min.js"></script>
+        <script src="../styles/js/bootstrap.min.js"></script>
+        <script src="../styles/js/owl.carousel.min.js"></script>
+        <script src="../styles/js/counter.js"></script>
+        <script src="../styles/js/custom.js"></script>
 
     </body>
 </html>
