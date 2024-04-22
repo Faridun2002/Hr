@@ -70,7 +70,7 @@ require_once "header.php";
                                                     "</tr>";
                                             }
                                         }
-
+                                        
                                         // Close connection
                                         $conn->close();
                                         ?>
