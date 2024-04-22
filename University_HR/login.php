@@ -60,8 +60,8 @@
                                 <form class="form-horizontal" action="index.php">
 
                                     <div class="mb-3">
-                                        <label class="form-label" for="username">Email</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Введите email">
+                                        <label class="form-label" for="username">Логин</label>
+                                        <input type="text" class="form-control" id="username" placeholder="Введите логин">
                                     </div>
 
                                     <div class="mb-3">

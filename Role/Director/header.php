@@ -62,7 +62,7 @@
                                     aria-expanded="false">
                                     <img class="rounded-circle header-profile-user"
                                         src="../assets/images/users/avatar-2.jpg" alt="Header Avatar">
-                                    <span class="d-none d-xl-inline-block ms-1">Админ</span>
+                                    <span class="d-none d-xl-inline-block ms-1">Камол</span>
                                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
@@ -88,8 +88,8 @@
                                 </a>
 
                                 <a href="index.php" class="logo logo-light" style="margin-left: 65px;">
-                                    <span class="logo-sm" >
-                                        <img src="../assets/images/LogoEX.png" alt="" height="55"
+                                    <span class="logo-sm">
+                                        <img src="../assets/images/LogoEX.png" alt="" height="20"
                                             style="border-radius: 50%;">
                                     </span>
                                     <span class="logo-lg">
@@ -120,8 +120,8 @@
 
                         <div class="mt-3">
 
-                            <a href="#" class="text-reset fw-medium font-size-16">Админ</a>
-                            <p class="text-muted mt-1 mb-0 font-size-13">Админстратор</p>
+                            <a href="#" class="text-reset fw-medium font-size-16">Шарипов Камол</a>
+                            <p class="text-muted mt-1 mb-0 font-size-13">Директор</p>
 
                         </div>
                     </div>
@@ -140,18 +140,11 @@
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <a href="employee.php" class="waves-effect">
                                     <i class="bx bx-group"></i>
                                     <span>Сотрудники</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="dir-employee.php">Список сотрудников</a></li>
-                                    <li><a href="add-employee.php">Добавить сотрудника</a></li>
-                                    <li><a href="edit-employee.php">Управлять сотрудниками</a></li>
-                                </ul>
                             </li>
-
-
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -159,56 +152,15 @@
                                     <span>Заявки</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="leave.php">Посмотреть заявки</a></li>
-                                    <li><a href="list-leave.php">Список заявок</a></li>
-                                    <li><a href="emp-leave.php">Отправить заявку</a></li>
-                                    <li><a href="status-leave.php">Статус заявки</a></li>
+                                    <li><a href="leave.php">Доступные заявки</a></li>
+                                    <li><a href="list-leave.php">Посмотреть список всех заявок</a></li>
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-task"></i>
+                                <a href="plan.php" class="waves-effect">
+                                    <i class="mdi mdi-airplay"></i>
                                     <span>План</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="add-plan.php">Создать план</a></li>
-                                    <li><a href="approve-plan.php">Утвердить план</a></li>
-                                    <li><a href="plan.php">Текущий план</a></li>
-                                    <li><a href="select-plan.php">Выбрать план</a></li>
-                                    <li><a href="zadacha-plan.php">Отправить выполненные задачи</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bxs-briefcase"></i>
-                                    <span>Вакансия</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="add-vacansies.php">Добавить вакансию</a></li>
-                                    <li><a href="../vacansiy.php">Посмотреть вакансию</a></li>
-                                    <li><a href="list-vacansies.php">Редактировать вакансию</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-list-check"></i>
-                                    <span>Обучение</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="ekzamen.php">Экзамен</a></li>
-                                    <li><a href="anketirovanie.php">Анкетирование</a></li>
-                                    <li><a href="attestaticy.php">Аттестация</a></li>
-                                </ul>
-                            </li>
-
-
-                            <li>
-                                <a href="profile.php" class="waves-effect">
-                                    <i class="bx bxs-user-detail"></i>
-                                    <span>Профиль</span>
                                 </a>
                             </li>
 

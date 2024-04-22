@@ -42,38 +42,31 @@ require_once "header.php";
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        
-                                        include_once 'conn.php';
+                                    <tr>
+                                            <td>Ахмедов Равшан</td>
+                                            <td>Преподователь</td>
+                                            <td>Кандидат наук</td>
+                                            <td>Информатика и энергетика</td>
+                                            <td>Программирование и информационная система</td>
+                                            <td>Ahmedov1010@mail.ru</td>
+                                            <td>+992 92 9922992</td>
+                                            <td>12345</td>
+                                            <td>12.01.1995</td>
+                                            <td>Худжанд</td>
+                                        </tr>
 
-                                        // SELECT query
-                                        $sql = "select e.Full_Name as FullName, ur.User_Type as UserType, d.Degree_Name as DegreeName, f.Faculty_Name as FacultyName, dep.Department_Name as DepartmentName, e.Email, e.Phone_Number as PhoneNumber, e.Employee_Number EmployeeNumber, e.Date_of_Birth as DateofBirth, e.Place_of_Birth as PlaceofBirth from employees e left join user_roles ur on e.User_Role_Id = ur.User_Role_Id left join degrees d on e.Degree_Id = d.Degree_Id left join faculties f on e.Faculty_Id = f.Faculty_Id left join departments dep on e.Department_Id = dep.Department_Id;";
-
-                                        // Execute query
-                                        $result = $conn->query($sql);
-                                        $count =0;
-                                        // Check if there are any results
-                                        if ($result->num_rows > 0) {
-                                            // Output data of each row
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo "<tr>".
-                                                        "<td>".$row["FullName"]."</td>".
-                                                        "<td>".$row["UserType"]."</td>".
-                                                        "<td>".$row["DegreeName"]."</td>".
-                                                        "<td>".$row["FacultyName"]."</td>".
-                                                        "<td>".$row["DepartmentName"]."</td>".
-                                                        "<td>".$row["Email"]."</td>".
-                                                        "<td>".$row["PhoneNumber"]."</td>".
-                                                        "<td>".$row["EmployeeNumber"]."</td>".
-                                                        "<td>".$row["DateofBirth"]."</td>".
-                                                        "<td>".$row["PlaceofBirth"]."</td>".
-                                                    "</tr>";
-                                            }
-                                        }
-
-                                        // Close connection
-                                        $conn->close();
-                                        ?>
+                                        <tr>
+                                            <td>Рахмонов Парвиз</td>
+                                            <td>Преподователь</td>
+                                            <td> - </td>
+                                            <td>Информатика и энергетика</td>
+                                            <td>Программирование и информационная система</td>
+                                            <td>Rahmonov122@mail.ru</td>
+                                            <td>+992 92 99221212</td>
+                                            <td>31241</td>
+                                            <td>16.04.1982</td>
+                                            <td>Душанбе</td>
+                                        </tr>
                                     </tbody>
                                 </table>
 

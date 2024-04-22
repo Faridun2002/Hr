@@ -1,6 +1,5 @@
 <?php 
 require_once "header.php";
-require_once "conn.php";
 ?>
 <!-- Left Sidebar End -->
 
@@ -55,21 +54,10 @@ require_once "conn.php";
                                 <label class="form-label">Должность</label>
                                 <select class="form-select" required>
                                     <option disabled selected>Выберите должность</option>
-                                    <?php
-                                        // SELECT query
-                                        $sql = "select Position_Id as PositionId,Position_Name as PositionName from positions;";
-
-                                        // Execute query
-                                        $result = $conn->query($sql);
-                                        $count =0;
-                                        // Check if there are any results
-                                        if ($result->num_rows > 0) {
-                                            // Output data of each row
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo "<option value='".$row["PositionId"]."'>".$row["PositionName"]."</option>";
-                                            }
-                                        }
-                                    ?>                                   
+                                    <option value="">Преподователь</option>
+                                    <option value="">Старший Преподователь</option>
+                                    <option value="">Ассистент</option>
+                                    <option value="">Бухгалтер</option>
                                 </select>
                             </div>
 
@@ -77,21 +65,8 @@ require_once "conn.php";
                                 <label class="form-label">Степень</label>
                                 <select class="form-select" required>
                                     <option disabled selected>Выберите степень</option>
-                                    <?php
-                                        // SELECT query
-                                        $sql = "select Degree_Id as DegreeId, Degree_Name as DegreeName from degrees;";
-
-                                        // Execute query
-                                        $result = $conn->query($sql);
-                                        $count =0;
-                                        // Check if there are any results
-                                        if ($result->num_rows > 0) {
-                                            // Output data of each row
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo "<option value='".$row["DegreeId"]."'>".$row["DegreeName"]."</option>";
-                                            }
-                                        }
-                                    ?> 
+                                    <option value="">Кандидат наук</option>
+                                    <option value="">Доцент</option>
                                 </select>
                             </div>
 
@@ -99,21 +74,9 @@ require_once "conn.php";
                                 <label class="form-label">Факультет</label>
                                 <select class="form-select" required>
                                     <option disabled selected>Выберите факультет</option>
-                                    <?php
-                                        // SELECT query
-                                        $sql = "select Faculty_Id as FacultyId,Faculty_Name as FacultyName from faculties;";
+                                    <option value="">Информатика и энергетика</option>
+                                    <option value="">Строительство и транспорт</option>
 
-                                        // Execute query
-                                        $result = $conn->query($sql);
-                                        $count =0;
-                                        // Check if there are any results
-                                        if ($result->num_rows > 0) {
-                                            // Output data of each row
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo "<option value='".$row["FacultyId"]."'>".$row["FacultyName"]."</option>";
-                                            }
-                                        }
-                                    ?>
                                 </select>
                             </div>
 
@@ -121,21 +84,8 @@ require_once "conn.php";
                                 <label class="form-label">Кафедры</label>
                                 <select class="form-select" required>
                                     <option disabled selected>Выберите кафедру</option>
-                                    <?php
-                                        // SELECT query
-                                        $sql = "select Department_Id as DepartmentId, Department_Name as DepartmentName from departments;";
-
-                                        // Execute query
-                                        $result = $conn->query($sql);
-                                        $count =0;
-                                        // Check if there are any results
-                                        if ($result->num_rows > 0) {
-                                            // Output data of each row
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo "<option value='".$row["DepartmentId"]."'>".$row["DepartmentName"]."</option>";
-                                            }
-                                        }
-                                    ?> 
+                                    <option value="">Программирование и ИС</option>
+                                    <option value="">Физикии и химии</option>
                                 </select>
                             </div>
 
@@ -143,21 +93,9 @@ require_once "conn.php";
                                 <label class="form-label">Роль пользователя</label>
                                 <select class="form-select" required>
                                     <option disabled selected>Выберите роль пользователя</option>
-                                    <?php
-                                        // SELECT query
-                                        $sql = "select User_Role_Id as UserRoleId, User_Type as UserType from user_roles;";
-
-                                        // Execute query
-                                        $result = $conn->query($sql);
-                                        $count =0;
-                                        // Check if there are any results
-                                        if ($result->num_rows > 0) {
-                                            // Output data of each row
-                                            while ($row = $result->fetch_assoc()) {
-                                                echo "<option value='".$row["UserRoleId"]."'>".$row["UserType"]."</option>";
-                                            }
-                                        }
-                                    ?>
+                                    <option value="director">Директор</option>
+                                    <option value="HR">Начальник отдела кадров</option>
+                                    <option value="employee">Сотрудник</option>
                                 </select>
                             </div>
 
@@ -175,16 +113,6 @@ require_once "conn.php";
                                 <label class="form-label">Табельный номер</label>
                                 <input type="text" class="form-control" required
                                     placeholder="Введите табельный номер" />
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Логин</label>
-                                <input type="text" class="form-control" required placeholder="Введите логин" />
-                            </div>
-
-                            <div class="mb-3">
-                                <label class="form-label">Пароль</label>
-                                <input type="password" class="form-control" required placeholder="Введите пароль" />
                             </div>
 
                             <div>
@@ -207,7 +135,6 @@ require_once "conn.php";
     </div>
     <!-- End Page-content -->
 
-<?php 
-$conn->close();
+    <?php 
 require_once "footer.php";
 ?>
