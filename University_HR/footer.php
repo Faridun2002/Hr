@@ -52,6 +52,15 @@
 <!-- App js -->
 <script src="../assets/js/app.js"></script>
 
+
+
+<!-- Table Editable plugin -->
+<script src="assets/libs/table-edits/build/table-edits.min.js"></script>
+
+<script src="assets/js/pages/table-editable.int.js"></script>
+
+<!-- App js -->
+
 </body>
 
 </html>

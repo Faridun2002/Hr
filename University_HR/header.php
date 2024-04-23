@@ -25,8 +25,6 @@
     <!-- Responsive datatable examples -->
     <link href="../assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
         type="text/css" />
-
-
     <!-- Bootstrap Css -->
     <link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
@@ -204,6 +202,12 @@
                                 </ul>
                             </li>
 
+                            <li>
+                                <a href="departament.php" class="waves-effect">
+                                    <i class="bx bx-buildings"></i>
+                                    <span>Департамент</span>
+                                </a>
+                            </li>
 
                             <li>
                                 <a href="profile.php" class="waves-effect">
