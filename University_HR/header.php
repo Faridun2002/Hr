@@ -103,9 +103,12 @@
                                 id="vertical-menu-btn">
                                 <i class="fa fa-fw fa-bars"></i>
                             </button>
+
+                            <!-- <h5 class="logo-text text-center text-white">"Управление персоналом в учебном заведении"</h5> -->
+
                         </div>
                     </div>
-            </header> <!-- ========== Left Sidebar Start ========== -->
+            </header> 
             <div class="vertical-menu">
 
                 <div class="h-100">
