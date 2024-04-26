@@ -55,7 +55,7 @@ File: Main Css File
 
 /* Search */
 .app-search {
-  padding: calc(var(--bs-header-height)-38px / 2) 0;
+  padding: calc(var(--bs-header-height) - 38px / 2) 0;
 }
 .app-search .form-control {
   border: none;
