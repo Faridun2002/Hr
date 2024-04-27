@@ -26,11 +26,23 @@ require_once "header.php";
                             <div class="btn-group mb-3 d-flex justify-content-end">
                                 <button type="button" class="btn btn-primary filterBtn" data-filter="all">Все</button>
                                 <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Преподаватели">Преподаватели</button>
+                                    data-filter="Преподаватели">Профессор</button>
                                 <button type="button" class="btn btn-primary filterBtn" data-filter="Доктор наук">Доктор
                                     наук</button>
                                 <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Доценты">Доценты</button>
+                                    data-filter="Доценты">Доцент</button>
+                                                                 
+                                    <button type="button" class="btn btn-primary filterBtn"
+                                    data-filter="Ассистент">Ассистент</button>
+
+                                    <button type="button" class="btn btn-primary filterBtn"
+                                    data-filter="Старший преподователь">Старший преподователь</button>
+
+                                    <button type="button" class="btn btn-primary filterBtn"
+                                    data-filter="Старший преподователь">Преподователь</button>
+
+                                    <button type="button" class="btn btn-primary filterBtn"
+                                    data-filter="Без степени">Без степени</button>
                             </div>
 
 
