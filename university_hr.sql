@@ -1,5 +1,5 @@
 /*
-SQLyog Ultimate v13.1.1 (64 bit)
+SQLyog Ultimate v13.1.1 (32 bit)
 MySQL - 8.0.30 : Database - university_hr
 *********************************************************************
 */
@@ -106,7 +106,7 @@ CREATE TABLE `employees` (
   CONSTRAINT `employees_ibfk_3` FOREIGN KEY (`Faculty_Id`) REFERENCES `faculties` (`Faculty_Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `employees_ibfk_4` FOREIGN KEY (`Department_Id`) REFERENCES `departments` (`Department_Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `employees_ibfk_5` FOREIGN KEY (`User_Role_Id`) REFERENCES `user_roles` (`User_Role_Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb3;
 
 /*Data for the table `employees` */
 
@@ -174,7 +174,8 @@ insert  into `employees`(`Employee_Id`,`Full_Name`,`Date_of_Birth`,`Place_of_Bir
 (68,'22222222222222','2024-04-26','2222222222',2,4,2,2,3,'222222222@gas.gff','222','222','2024-04-26',NULL,'2','2'),
 (69,'22222222222222','2024-04-26','2222222222',2,4,2,2,3,'222222222@gas.gff','222','222','2024-04-26',NULL,'2','2'),
 (70,'1231231231231231212','2024-04-26','-0-0-0-',2,5,1,2,5,'434@gfg.gf','312','21','2024-04-26',NULL,'12','12'),
-(71,'test','2024-04-26','test',5,1,5,2,5,'t3est@test.test','213','123','2024-04-26',NULL,'123','test');
+(71,'test','2024-04-26','test',5,1,5,2,5,'t3est@test.test','213','123','2024-04-26',NULL,'123','test'),
+(72,'serserse','2024-04-27','weqwe',2,2,1,3,1,'sdfs@sda.sdas','1231','12312','2024-04-27',NULL,'1231231','12123');
 
 /*Table structure for table `faculties` */
 
