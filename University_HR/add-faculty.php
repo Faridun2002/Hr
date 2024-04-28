@@ -1,9 +1,12 @@
 <?php
 require_once "header.php";
 // Подключение к базе данных
-require_once "add-depart.php";
+require_once "add-facul.php";
 
 ?>
+
+
+
 <div class="main-content">
 
     <div class="page-content">
@@ -16,18 +19,19 @@ require_once "add-depart.php";
                 </div>
             </div>
         </div>
+
     <div class="row">
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <h4>Создать кафедру</h4>
-             <form id="createDepartmentForm" method="POST"> <div class="form-group">
-                <label for="departmentInput">Кафедра</label>
-                <input type="text" class="form-control" id="departmentInput" name="departmentInput" placeholder="Введите название кафедры">
+            <h4>Создать факультет</h4>
+            <form id="createFacultyForm" method="POST"> <div class="form-group">
+                <label for="facultyInput">Факультет</label>
+                <input type="text" class="form-control" id="facultyInput" name="facultyInput" placeholder="Введите название факультета">
               </div>
               <div class="row mt-3 text-center">
                 <div class="col-12">
-                  <button class="btn btn-success" formaction="add-depart.php">Сохранить</button>
+                  <button class="btn btn-success" formaction="add-facul.php">Сохранить</button>
                 </div>
               </div>
             </form>
@@ -35,7 +39,9 @@ require_once "add-depart.php";
         </div>
       </div>
     </div>
+
   </div>
+
 
 <?php
 require_once "footer.php";

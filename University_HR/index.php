@@ -31,18 +31,18 @@ require_once "header.php";
                                     наук</button>
                                 <button type="button" class="btn btn-primary filterBtn"
                                     data-filter="Доценты">Доцент</button>
-                                                                 
-                                    <button type="button" class="btn btn-primary filterBtn"
+
+                                <button type="button" class="btn btn-primary filterBtn"
                                     data-filter="Ассистент">Ассистент</button>
 
-                                    <button type="button" class="btn btn-primary filterBtn"
+                                <button type="button" class="btn btn-primary filterBtn"
                                     data-filter="Старший преподователь">Старший преподователь</button>
 
-                                    <button type="button" class="btn btn-primary filterBtn"
+                                <button type="button" class="btn btn-primary filterBtn"
                                     data-filter="Старший преподователь">Преподователь</button>
 
-                                    <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Без степени">Без степени</button>
+                                <button type="button" class="btn btn-primary filterBtn" data-filter="Без степени">Без
+                                    степени</button>
                             </div>
 
 
@@ -60,15 +60,9 @@ require_once "header.php";
                                     </thead>
                                     <tbody>
                                         <?php
-                                                // Database connection parameters
-                                                $servername = "localhost"; // Change this to your MySQL server hostname
-                                                $username = "root"; // Change this to your MySQL username
-                                                $password = "root"; // Change this to your MySQL password
-                                                $database = "university_hr"; // Change this to your MySQL database name
-
-                                                // Create connection
-                                                $conn = new mysqli($servername, $username, $password, $database);
-
+                                          
+                                          require_once "conn.php";
+                                          
                                                 // Check connection
                                                 if ($conn->connect_error) {
                                                     die("Connection failed: " . $conn->connect_error);
