@@ -319,11 +319,11 @@ CREATE TABLE `user_roles` (
 /*Data for the table `user_roles` */
 
 insert  into `user_roles`(`User_Role_Id`,`User_Type`) values 
-(1,'Admin'),
-(2,'Employee'),
-(3,'HR Manager'),
-(4,'Supervisor'),
-(5,'Director');
+(1,'Админ'),
+(2,'Сотрудник'),
+(3,'Менеджер отдел кадров'),
+(4,'Начальник отдела кадров'),
+(5,'Директор');
 
 /*Table structure for table `vacancies` */
 
