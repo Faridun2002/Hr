@@ -68,11 +68,18 @@ CREATE TABLE `departments` (
 /*Data for the table `departments` */
 
 insert  into `departments`(`Department_Id`,`Department_Name`) values 
-(1,'Department of Science'),
-(2,'Department of Arts'),
-(3,'Department of Literature'),
-(4,'Department of Engineering'),
-(5,'Department of Medicine');
+(1,'Электроснабжение и автоматика'),
+(2,'Программирование и информационные  системы'),
+(3,'Инженерная экономика и менеджмент'),
+(4,' Физики и химии'),
+(5,'Автомобили и управление на транспорте'),
+(6,'Строительства'),
+(7,'Государственный язык и обществоведение'),
+(8,'Финансы и кредит'),
+(9,'Высшая математика и информатика'),
+(10,'Дизайна и архитектуры'),
+(11,'Пищевая продукция и агротехнология'),
+(12,'Кафедры Языков');
 
 /*Table structure for table `employees` */
 
@@ -115,7 +122,6 @@ insert  into `employees`(`Employee_Id`,`Full_Name`,`Date_of_Birth`,`Place_of_Bir
 (2,'Jane Smith','1985-10-20','Los Angeles',2,2,2,2,2,'jane.smith@example.com','987-654-3210','EMP002','2023-01-02',NULL,NULL,NULL),
 (3,'Michael Johnson','1988-03-25','Chicago',3,1,3,3,2,'michael.johnson@example.com','111-222-3333','EMP003','2023-01-03',NULL,NULL,NULL),
 (4,'Emily Brown','1995-07-10','Houston',4,4,4,4,2,'emily.brown@example.com','444-555-6666','EMP004','2023-01-04',NULL,NULL,NULL),
-(5,'William Taylor','1992-12-30','Boston',5,5,5,5,2,'william.taylor@example.com','777-888-9999','EMP005','2023-01-05',NULL,NULL,NULL),
 (7,'Тест','2024-04-26','ТЕмст',2,1,1,2,1,'sada@gasd.csa','23123','12312','2024-04-26',NULL,'etse','ауыуаы'),
 (8,'Тест','2024-04-26','ТЕмст',2,1,1,2,1,'sada@gasd.csa','23123','12312','2024-04-26',NULL,'etse','ауыуаы'),
 (9,'Тест','2024-04-26','ТЕмст',2,1,1,2,1,'sada@gasd.csa','23123','12312','2024-04-26',NULL,'etse','ауыуаы'),
@@ -174,7 +180,6 @@ insert  into `employees`(`Employee_Id`,`Full_Name`,`Date_of_Birth`,`Place_of_Bir
 (68,'22222222222222','2024-04-26','2222222222',2,4,2,2,3,'222222222@gas.gff','222','222','2024-04-26',NULL,'2','2'),
 (69,'22222222222222','2024-04-26','2222222222',2,4,2,2,3,'222222222@gas.gff','222','222','2024-04-26',NULL,'2','2'),
 (70,'1231231231231231212','2024-04-26','-0-0-0-',2,5,1,2,5,'434@gfg.gf','312','21','2024-04-26',NULL,'12','12'),
-(71,'test','2024-04-26','test',5,1,5,2,5,'t3est@test.test','213','123','2024-04-26',NULL,'123','test'),
 (72,'serserse','2024-04-27','weqwe',2,2,1,3,1,'sdfs@sda.sdas','1231','12312','2024-04-27',NULL,'1231231','12123');
 
 /*Table structure for table `faculties` */
@@ -190,11 +195,10 @@ CREATE TABLE `faculties` (
 /*Data for the table `faculties` */
 
 insert  into `faculties`(`Faculty_Id`,`Faculty_Name`) values 
-(1,'Faculty of Science'),
-(2,'Faculty of Arts'),
-(3,'Faculty of Literature'),
-(4,'Faculty of Engineering'),
-(5,'Faculty of Medicine');
+(1,'Факультет информатики и энергетики'),
+(2,'Факультет строительство и транспорта'),
+(3,'Инженерно - экономический факультет'),
+(4,'Инженерно - технологический факультет');
 
 /*Table structure for table `plans` */
 
@@ -233,11 +237,20 @@ CREATE TABLE `positions` (
 /*Data for the table `positions` */
 
 insert  into `positions`(`Position_Id`,`Position_Name`) values 
-(1,'Professor'),
-(2,'Associate Professor'),
-(3,'Assistant Professor'),
-(4,'Researcher'),
-(5,'Lecturer');
+(1,'Директор'),
+(2,'Заведующий кафедрой'),
+(3,'Кандидат физико-математических наук,дотцент'),
+(4,'Старшый преподователь'),
+(5,'Ассистент'),
+(6,'Кандидат технических наук,доцент'),
+(7,'Кандидат технических наук,Старшый преподователь'),
+(8,'Доктор экономических наук,Профессор'),
+(9,'Кандидат экономических наук,Доцент'),
+(10,'Кандидат экономических наук,Старшый преподователь'),
+(12,'Кандидат химических наук,Доцент'),
+(13,'Кандидат физико-математических наук,Старшый преподователь'),
+(14,'Кандидат химических наук,Старшый преподователь'),
+(15,'Кандидат филологических наук,Старшый преподователь');
 
 /*Table structure for table `ratings` */
 
@@ -260,8 +273,7 @@ insert  into `ratings`(`Rating_Id`,`Employee_Id`,`Credit_Done`,`Credit_Full`,`Ra
 (1,1,80,100,4.50),
 (2,2,75,100,4.20),
 (3,3,90,100,4.80),
-(4,4,65,100,3.90),
-(5,5,95,100,4.90);
+(4,4,65,100,3.90);
 
 /*Table structure for table `requests` */
 
