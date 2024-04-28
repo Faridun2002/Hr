@@ -47,7 +47,7 @@ require_once "header.php";
                                         include_once 'conn.php';
 
                                         // SELECT query
-                                        $sql = "select e.Full_Name as FullName, ur.User_Type as UserType, d.Degree_Name as DegreeName, f.Faculty_Name as FacultyName, dep.Department_Name as DepartmentName, e.Email, e.Phone_Number as PhoneNumber, e.Employee_Number EmployeeNumber, e.Date_of_Birth as DateofBirth, e.Place_of_Birth as PlaceofBirth from employees e left join user_roles ur on e.User_Role_Id = ur.User_Role_Id left join degrees d on e.Degree_Id = d.Degree_Id left join faculties f on e.Faculty_Id = f.Faculty_Id left join departments dep on e.Department_Id = dep.Department_Id;";
+                                        $sql = "select e.Full_Name as FullName, ur.Position_Name as Position_Name, d.Degree_Name as DegreeName, f.Faculty_Name as FacultyName, dep.Department_Name as DepartmentName, e.Email, e.Phone_Number as PhoneNumber, e.Employee_Number EmployeeNumber, e.Date_of_Birth as DateofBirth, e.Place_of_Birth as PlaceofBirth from employees e left join positions ur on e.Position_Id = ur.Position_Id left join degrees d on e.Degree_Id = d.Degree_Id left join faculties f on e.Faculty_Id = f.Faculty_Id left join departments dep on e.Department_Id = dep.Department_Id;";
 
                                         // Execute query
                                         $result = $conn->query($sql);
@@ -58,7 +58,7 @@ require_once "header.php";
                                             while ($row = $result->fetch_assoc()) {
                                                 echo "<tr>".
                                                         "<td>".$row["FullName"]."</td>".
-                                                        "<td>".$row["UserType"]."</td>".
+                                                        "<td>".$row["Position_Name"]."</td>".
                                                         "<td>".$row["DegreeName"]."</td>".
                                                         "<td>".$row["FacultyName"]."</td>".
                                                         "<td>".$row["DepartmentName"]."</td>".
