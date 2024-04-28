@@ -25,7 +25,9 @@ require_once "header.php";
                     <div class="card-body">
                         <h4>Редактирование информации о сотрудниках</h4>
                         <div class="table-responsive">
-                            <table class="table table-editable table-nowrap align-middle table-edits">
+
+                            <table id="datatable" class="table table-bordered"
+                                style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                     <tr class="bg-white">
                                         <th>№</th>
@@ -110,6 +112,30 @@ require_once "header.php";
         </div>
     </div>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Подключение библиотеки DataTables -->
+    <script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
+
+    <script>
+    $(document).ready(function() {
+        $('#datatable').DataTable({
+            "language": {
+                "lengthMenu": "Показать _MENU_ записей на странице",
+                "zeroRecords": "Ничего не найдено",
+                "info": "Показано с _START_ по _END_ из _TOTAL_ записей",
+                "infoEmpty": "Показано с 0 по 0 из 0 записей",
+                "infoFiltered": "(отфильтровано из _MAX_ записей)",
+                "search": "Поиск:",
+                "paginate": {
+                    "first": "Первая",
+                    "last": "Последняя",
+                    "next": "Следующая",
+                    "previous": "Предыдущая"
+                }
+            }
+        });
+    });
+    </script>
     <?php 
     require_once "footer.php";
     ?>

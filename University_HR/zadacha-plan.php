@@ -63,7 +63,7 @@ require_once "header.php";
                                         <input type="text" class="form-control" value="" disabled>
                                     </div>
 
-                                    <div class="col-lg-10"></div> 
+                                    <div class="col-lg-10"></div>
                                     <div class="col-lg-2 d-flex justify-content-end">
                                         <div class="mb-3 align-self-center">
                                             <input data-repeater-create type="button" class="btn btn-success"
@@ -115,7 +115,7 @@ require_once "header.php";
                                         <input type="text" class="form-control" value="" disabled>
                                     </div>
 
-                                    <div class="col-lg-10"></div> 
+                                    <div class="col-lg-10"></div>
                                     <div class="col-lg-2 d-flex justify-content-end">
                                         <div class="mb-3 align-self-center">
                                             <input data-repeater-create type="button" class="btn btn-success"
@@ -129,7 +129,7 @@ require_once "header.php";
                 </div>
             </div>
         </div>
-        
+
         <?php 
 require_once "footer.php";
 ?>

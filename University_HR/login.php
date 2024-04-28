@@ -50,7 +50,7 @@
                             <div class="position-relative">
                                 <!-- <h5 class="text-white font-size-20">Welcome Back !</h5> -->
                                 <p class="text-white-50 mb-0">Добро пожаловать!</p>
-                                <a  class="logo logo-admin mt-4">
+                                <a class="logo logo-admin mt-4">
                                     <img src="../assets/images/logoEX.png" alt="Логотип" height="48">
                                 </a>
                             </div>
@@ -61,13 +61,14 @@
 
                                     <div class="mb-3">
                                         <label class="form-label" for="username">Логин</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Введите логин">
+                                        <input type="text" class="form-control" id="username"
+                                            placeholder="Введите логин">
                                     </div>
 
                                     <div class="mb-3">
                                         <label class="form-label" for="userpassword">Пароль</label>
                                         <input type="password" class="form-control" id="userpassword"
-                                        placeholder="Введите пароль">
+                                            placeholder="Введите пароль">
                                     </div>
 
                                     <div class="form-check">
@@ -86,47 +87,47 @@
 
                         </div>
                     </div>
-             
+
+                </div>
+            </div>
         </div>
+
     </div>
-</div>
 
-</div> 
+    <!-- /Right-bar -->
 
-<!-- /Right-bar -->
+    <div class="rightbar-overlay"></div>
 
-<div class="rightbar-overlay"></div>
+    <!-- JAVASCRIPT -->
+    <!-- JAVASCRIPT -->
+    <script src="../assets/libs/jquery/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="../assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="../assets/libs/node-waves/waves.min.js"></script>
+    <script src="../assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
 
-<!-- JAVASCRIPT -->
-<!-- JAVASCRIPT -->
-<script src="../assets/libs/jquery/jquery.min.js"></script>
-<script src="../assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../assets/libs/metismenu/metisMenu.min.js"></script>
-<script src="../assets/libs/simplebar/simplebar.min.js"></script>
-<script src="../assets/libs/node-waves/waves.min.js"></script>
-<script src="../assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!-- Required datatable js -->
+    <script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Buttons examples -->
+    <script src="../assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
+    <script src="../assets/libs/jszip/jszip.min.js"></script>
+    <script src="../assets/libs/pdfmake/build/pdfmake.min.js"></script>
+    <script src="../assets/libs/pdfmake/build/vfs_fonts.js"></script>
+    <script src="../assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="../assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <!-- Responsive examples -->
+    <script src="../assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
 
-<!-- Required datatable js -->
-<script src="../assets/libs/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="../assets/libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-<!-- Buttons examples -->
-<script src="../assets/libs/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="../assets/libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js"></script>
-<script src="../assets/libs/jszip/jszip.min.js"></script>
-<script src="../assets/libs/pdfmake/build/pdfmake.min.js"></script>
-<script src="../assets/libs/pdfmake/build/vfs_fonts.js"></script>
-<script src="../assets/libs/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="../assets/libs/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="../assets/libs/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-<!-- Responsive examples -->
-<script src="../assets/libs/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="../assets/libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+    <!-- Datatable init js -->
+    <script src="../assets/js/pages/datatables.init.js"></script>
 
-<!-- Datatable init js -->
-<script src="../assets/js/pages/datatables.init.js"></script>
-
-<!-- App js -->
-<script src="../assets/js/app.js"></script>
+    <!-- App js -->
+    <script src="../assets/js/app.js"></script>
 
 </body>
 

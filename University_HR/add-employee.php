@@ -177,8 +177,6 @@ require_once "add-emp.php";
         ?>
                                 </select>
                             </div>
-
-
                             <div class="form-group mb-3">
                                 <label for="Email">Email:</label>
                                 <input type="Email" class="form-control" id="Email" name="Email" required
@@ -200,9 +198,6 @@ require_once "add-emp.php";
                                     value="<?php echo $Employee_Number; ?>">
                                 <span class="error"><?php echo $Employee_NumberErr; ?></span>
                             </div>
-
-
-
                             <div class="form-group mb-3">
                                 <label for="Username">Логин:</label>
                                 <input type="Username" class="form-control" id="Username" name="Username" required

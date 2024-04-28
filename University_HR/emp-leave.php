@@ -63,11 +63,11 @@ require_once "header.php";
                             <div class="mb-3 row">
                                 <label for="example-date-input" class="col-md-2 col-form-label">Комментарии</label>
                                 <div class="col-md-10">
-                                <textarea required class="form-control" rows="5"></textarea>
+                                    <textarea required class="form-control" rows="5"></textarea>
                                 </div>
                             </div>
-                            
-                          
+
+
                             <div class="text-center">
                                 <!-- Центрируем кнопку -->
                                 <button class="btn btn-primary" type="submit">Отправить</button>

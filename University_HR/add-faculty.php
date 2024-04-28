@@ -20,30 +20,31 @@ require_once "add-facul.php";
             </div>
         </div>
 
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <h4>Создать факультет</h4>
-            <form id="createFacultyForm" method="POST"> <div class="form-group">
-                <label for="facultyInput">Факультет</label>
-                <input type="text" class="form-control" id="facultyInput" name="facultyInput" placeholder="Введите название факультета">
-              </div>
-              <div class="row mt-3 text-center">
-                <div class="col-12">
-                  <button class="btn btn-success" formaction="add-facul.php">Сохранить</button>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Создать факультет</h4>
+                        <form id="createFacultyForm" method="POST">
+                            <div class="form-group">
+                                <label for="facultyInput">Факультет</label>
+                                <input type="text" class="form-control" id="facultyInput" name="facultyInput"
+                                    placeholder="Введите название факультета">
+                            </div>
+                            <div class="row mt-3 text-center">
+                                <div class="col-12">
+                                    <button class="btn btn-success" formaction="add-facul.php">Сохранить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
+
     </div>
 
-  </div>
 
-
-<?php
+    <?php
 require_once "footer.php";
 ?>
-

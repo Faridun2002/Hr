@@ -16,28 +16,29 @@ require_once "add-depart.php";
                 </div>
             </div>
         </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="card">
-          <div class="card-body">
-            <h4>Создать кафедру</h4>
-             <form id="createDepartmentForm" method="POST"> <div class="form-group">
-                <label for="departmentInput">Кафедра</label>
-                <input type="text" class="form-control" id="departmentInput" name="departmentInput" placeholder="Введите название кафедры">
-              </div>
-              <div class="row mt-3 text-center">
-                <div class="col-12">
-                  <button class="btn btn-success" formaction="add-depart.php">Сохранить</button>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Создать кафедру</h4>
+                        <form id="createDepartmentForm" method="POST">
+                            <div class="form-group">
+                                <label for="departmentInput">Кафедра</label>
+                                <input type="text" class="form-control" id="departmentInput" name="departmentInput"
+                                    placeholder="Введите название кафедры">
+                            </div>
+                            <div class="row mt-3 text-center">
+                                <div class="col-12">
+                                    <button class="btn btn-success" formaction="add-depart.php">Сохранить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-              </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 
-<?php
+    <?php
 require_once "footer.php";
 ?>
-

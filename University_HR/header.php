@@ -19,10 +19,12 @@
 
     <!-- DataTables -->
     <link href="../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="../assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
     <!-- Bootstrap Css -->
     <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
@@ -80,7 +82,7 @@
                                 </a>
 
                                 <a href="index.php" class="logo logo-light" style="margin-left: 65px;">
-                                    <span class="logo-sm" >
+                                    <span class="logo-sm">
                                         <img src="../assets/images/LogoEX.png" alt="" height="55"
                                             style="border-radius: 50%;">
                                     </span>
@@ -102,7 +104,7 @@
 
                         </div>
                     </div>
-            </header> 
+            </header>
             <div class="vertical-menu">
 
                 <div class="h-100">
