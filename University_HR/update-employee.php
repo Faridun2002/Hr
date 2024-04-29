@@ -1,10 +1,6 @@
 <?php 
 require_once "header.php";
-?>
-
-<?php
 require_once "conn.php";
-
 // Проверяем, был ли передан идентификатор сотрудника для редактирования
 if(isset($_GET['id'])) {
     $employeeId = $_GET['id'];
@@ -30,10 +26,11 @@ if(isset($_GET['id'])) {
         $dateAdded = $row["Date_Added"];
     } else {
         echo "Сотрудник не найден.";
-        exit;
+        header("Location: edit-employee.php");
+        exit();
     }
 } else {
-    echo "Неверный запрос.";
+    // echo "Неверный запрос.";
     exit;
 }
 
@@ -56,12 +53,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE employees SET Full_Name='$fullName', Date_of_Birth='$dateOfBirth', Place_of_Birth='$placeOfBirth', Position_Id='$positionId', Degree_Id='$degreeId', Faculty_Id='$facultyId', Department_Id='$departmentId', User_Role_Id='$userRoleId', Email='$email', Phone_Number='$phoneNumber', Employee_Number='$employeeNumber' WHERE Employee_Id = $employeeId";
 
     if(mysqli_query($conn, $sql)) {
-        echo "Данные успешно обновлены.";
+        // echo "Данные успешно обновлены.";
+   
     } else {
-        echo "Ошибка при обновлении данных: " . mysqli_error($conn);
+        
+        // echo "Ошибка при обновлении данных: " . mysqli_error($conn);
     }
 }
 ?>
+
 
 <div class="main-content">
     <div class="page-content">
@@ -80,7 +80,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="card">
                     <div class="card-body">
                         <h3>Изменить данные сотрудника</h3>
-                        <form method="post" class="custom-validation">
+                        <form method="POST">
                             <div class="mb-3">
                                 <label class="form-label">ФИО</label>
                                 <input type="text" class="form-control mb-3" name="full_name"
@@ -100,7 +100,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                                     value="<?php echo $placeOfBirth; ?>" required placeholder="Введите место рождения">
                             </div>
                             <select class="form-select" name="position_id" required>
-                                <option disabled selected>Выберите должность</option>
                                 <?php
     // Выбираем все должности из таблицы positions
     $sqlPositions = "SELECT Position_Id, Position_Name FROM positions";
@@ -110,7 +109,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     if (mysqli_num_rows($resultPositions) > 0) {
         // Выводим каждую должность как опцию в выпадающем списке
         while ($rowPosition = mysqli_fetch_assoc($resultPositions)) {
-            echo "<option value='" . $rowPosition['Position_Id'] . "'>" . $rowPosition['Position_Name'] . "</option>";
+            // Проверяем, является ли текущая должность выбранной
+            if ($rowPosition['Position_Id'] == $selectedPositionId) {
+                echo "<option value='" . $rowPosition['Position_Id'] . "' selected>" . $rowPosition['Position_Name'] . "</option>";
+            } else {
+                echo "<option value='" . $rowPosition['Position_Id'] . "'>" . $rowPosition['Position_Name'] . "</option>";
+            }
         }
     } else {
         echo "<option disabled>Нет доступных должностей</option>";
@@ -119,94 +123,119 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                             </select>
 
 
-
-
                             <div class="mb-3">
                                 <label class="form-label">Степень</label>
-                                <select class="form-select" name="degree_id" required>
-                                    <option disabled selected>Выберите степень</option>
-                                    <?php
-        // Выбираем все степени из таблицы degrees
-        $sqlDegrees = "SELECT Degree_Id, Degree_Name FROM degrees";
-        $resultDegrees = mysqli_query($conn, $sqlDegrees);
 
-        // Проверяем, есть ли результаты
-        if (mysqli_num_rows($resultDegrees) > 0) {
-            // Выводим каждую степень как опцию в выпадающем списке
-            while ($rowDegree = mysqli_fetch_assoc($resultDegrees)) {
+                                <select class="form-select" name="degree_id" required>
+                                    <?php
+    // Выбираем все степени из таблицы degrees
+    $sqlDegrees = "SELECT Degree_Id, Degree_Name FROM degrees";
+    $resultDegrees = mysqli_query($conn, $sqlDegrees);
+
+    // Проверяем, есть ли результаты
+    if (mysqli_num_rows($resultDegrees) > 0) {
+        // Выводим каждую степень как опцию в выпадающем списке
+        while ($rowDegree = mysqli_fetch_assoc($resultDegrees)) {
+            // Проверяем, является ли текущая степень выбранной
+            if ($rowDegree['Degree_Id'] == $selectedDegreeId) {
+                echo "<option value='" . $rowDegree['Degree_Id'] . "' selected>" . $rowDegree['Degree_Name'] . "</option>";
+            } else {
                 echo "<option value='" . $rowDegree['Degree_Id'] . "'>" . $rowDegree['Degree_Name'] . "</option>";
             }
-        } else {
-            echo "<option disabled>Нет доступных степеней</option>";
         }
-        ?>
+    } else {
+        echo "<option disabled>Нет доступных степеней</option>";
+    }
+    ?>
                                 </select>
+
+
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Факультет</label>
-                                <select class="form-select" name="faculty_id" required>
-                                    <option disabled selected>Выберите факультет</option>
-                                    <?php
-        // Выбираем все факультеты из таблицы faculties
-        $sqlFaculties = "SELECT Faculty_Id, Faculty_Name FROM faculties";
-        $resultFaculties = mysqli_query($conn, $sqlFaculties);
 
-        // Проверяем, есть ли результаты
-        if (mysqli_num_rows($resultFaculties) > 0) {
-            // Выводим каждый факультет как опцию в выпадающем списке
-            while ($rowFaculty = mysqli_fetch_assoc($resultFaculties)) {
+                                <select class="form-select" name="faculty_id" required>
+                                    <?php
+    // Выбираем все факультеты из таблицы faculties
+    $sqlFaculties = "SELECT Faculty_Id, Faculty_Name FROM faculties";
+    $resultFaculties = mysqli_query($conn, $sqlFaculties);
+
+    // Проверяем, есть ли результаты
+    if (mysqli_num_rows($resultFaculties) > 0) {
+        // Выводим каждый факультет как опцию в выпадающем списке
+        while ($rowFaculty = mysqli_fetch_assoc($resultFaculties)) {
+            // Проверяем, является ли текущий факультет выбранным
+            if ($rowFaculty['Faculty_Id'] == $selectedFacultyId) {
+                echo "<option value='" . $rowFaculty['Faculty_Id'] . "' selected>" . $rowFaculty['Faculty_Name'] . "</option>";
+            } else {
                 echo "<option value='" . $rowFaculty['Faculty_Id'] . "'>" . $rowFaculty['Faculty_Name'] . "</option>";
             }
-        } else {
-            echo "<option disabled>Нет доступных факультетов</option>";
         }
-        ?>
+    } else {
+        echo "<option disabled>Нет доступных факультетов</option>";
+    }
+    ?>
                                 </select>
+
+
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Кафедра</label>
                                 <select class="form-select" name="department_id" required>
-                                    <option disabled selected>Выберите кафедру</option>
                                     <?php
-        // Выбираем все кафедры из таблицы departments
-        $sqlDepartments = "SELECT Department_Id, Department_Name FROM departments";
-        $resultDepartments = mysqli_query($conn, $sqlDepartments);
+    // Выбираем все кафедры из таблицы departments
+    $sqlDepartments = "SELECT Department_Id, Department_Name FROM departments";
+    $resultDepartments = mysqli_query($conn, $sqlDepartments);
 
-        // Проверяем, есть ли результаты
-        if (mysqli_num_rows($resultDepartments) > 0) {
-            // Выводим каждую кафедру как опцию в выпадающем списке
-            while ($rowDepartment = mysqli_fetch_assoc($resultDepartments)) {
+    // Проверяем, есть ли результаты
+    if (mysqli_num_rows($resultDepartments) > 0) {
+        // Выводим каждую кафедру как опцию в выпадающем списке
+        while ($rowDepartment = mysqli_fetch_assoc($resultDepartments)) {
+            // Проверяем, является ли текущая кафедра выбранной
+            if ($rowDepartment['Department_Id'] == $selectedDepartmentId) {
+                echo "<option value='" . $rowDepartment['Department_Id'] . "' selected>" . $rowDepartment['Department_Name'] . "</option>";
+            } else {
                 echo "<option value='" . $rowDepartment['Department_Id'] . "'>" . $rowDepartment['Department_Name'] . "</option>";
             }
-        } else {
-            echo "<option disabled>Нет доступных кафедр</option>";
         }
-        ?>
+    } else {
+        echo "<option disabled>Нет доступных кафедр</option>";
+    }
+    ?>
                                 </select>
+
+
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Роль пользователя</label>
-                                <select class="form-select" name="user_role_id" required>
-                                    <option disabled selected>Выберите роль пользователя</option>
-                                    <?php
-        // Выбираем все роли пользователей из таблицы user_roles
-        $sqlUserRoles = "SELECT User_Role_Id, User_Type FROM user_roles";
-        $resultUserRoles = mysqli_query($conn, $sqlUserRoles);
 
-        // Проверяем, есть ли результаты
-        if (mysqli_num_rows($resultUserRoles) > 0) {
-            // Выводим каждую роль пользователя как опцию в выпадающем списке
-            while ($rowUserRole = mysqli_fetch_assoc($resultUserRoles)) {
+                                <select class="form-select" name="user_role_id" required>
+                                    <?php
+    // Выбираем все роли пользователей из таблицы user_roles
+    $sqlUserRoles = "SELECT User_Role_Id, User_Type FROM user_roles";
+    $resultUserRoles = mysqli_query($conn, $sqlUserRoles);
+
+    // Проверяем, есть ли результаты
+    if (mysqli_num_rows($resultUserRoles) > 0) {
+        // Выводим каждую роль пользователя как опцию в выпадающем списке
+        while ($rowUserRole = mysqli_fetch_assoc($resultUserRoles)) {
+            // Проверяем, является ли текущая роль пользователя выбранной
+            if ($rowUserRole['User_Role_Id'] == $selectedUserRoleID) {
+                echo "<option value='" . $rowUserRole['User_Role_Id'] . "' selected>" . $rowUserRole['User_Type'] . "</option>";
+            } else {
                 echo "<option value='" . $rowUserRole['User_Role_Id'] . "'>" . $rowUserRole['User_Type'] . "</option>";
             }
-        } else {
-            echo "<option disabled>Нет доступных ролей пользователей</option>";
         }
-        ?>
+    } else {
+        echo "<option disabled>Нет доступных ролей пользователей</option>";
+    }
+    ?>
                                 </select>
+
+
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Email</label>
@@ -235,9 +264,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <label class="form-label">Пароль</label>
                                 <input type="password" class="form-control" required placeholder="Введите пароль">
                             </div> -->
-                            <div class="text-center">
-                                <button type="submit"
-                                    class="btn btn-success waves-effect waves-light">Сохранить</button>
+
+
+                            <!-- <div class="text-center">
+                                <button type="submit" class="btn btn-success waves-effect waves-light"
+                                    formaction="update-emp.php">Сохранить</button>
+                            </div> -->
+                            <!-- <div class="row mt-3 text-center">
+                                <div class="col-12">
+                                    <button class="btn btn-success">Сохранить</button>
+                                </div> -->
+
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-block">Сохранить</button>
                             </div>
                         </form>
                     </div>

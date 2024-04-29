@@ -36,7 +36,7 @@ require_once "header.php";
                                     data-filter="Ассистент">Ассистент</button>
 
                                 <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Старший преподователь">Старший преподователь</button>
+                                    data-filter="Старшый преподователь">Старшый преподователь</button>
 
                                 <button type="button" class="btn btn-primary filterBtn"
                                     data-filter="Старший преподователь">Преподователь</button>
