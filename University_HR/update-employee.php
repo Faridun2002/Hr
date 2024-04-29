@@ -48,6 +48,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $phoneNumber = $_POST['phone_number'];
     $employeeNumber = $_POST['employee_number'];
+    $selectedPositionId = $positionId;
+$selectedDegreeId = $degreeId;
+$selectedFacultyId = $facultyId;
+$selectedDepartmentId = $departmentId;
+$selectedUserRoleID = $userRoleId;
 
     // Обновляем запись в БД
     $sql = "UPDATE employees SET Full_Name='$fullName', Date_of_Birth='$dateOfBirth', Place_of_Birth='$placeOfBirth', Position_Id='$positionId', Degree_Id='$degreeId', Faculty_Id='$facultyId', Department_Id='$departmentId', User_Role_Id='$userRoleId', Email='$email', Phone_Number='$phoneNumber', Employee_Number='$employeeNumber' WHERE Employee_Id = $employeeId";
