@@ -104,7 +104,7 @@ require_once "header.php";
                                             </button>
                                         </td>
 
-                                        <tr>
+                                    <tr>
                                         <th scope="row">4</th>
                                         <td>Ааааааааа Бббббббббб</td>
                                         <td>Командировка</td>
@@ -126,7 +126,7 @@ require_once "header.php";
                                             </button>
                                         </td>
 
-                                        <tr>
+                                    <tr>
                                         <th scope="row">5</th>
                                         <td>Ааааааааа Бббббббббб</td>
                                         <td>Командировка</td>
@@ -149,115 +149,122 @@ require_once "header.php";
                                         </td>
 
                                     </tr>
+
+
                                     <div class="modal fade" id="myModal1" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel1" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel1">
-                                                            Диалоговое окно 1</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Здесь можете разместить текст или контент для первой
-                                                        кнопки.
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Закрыть</button>
-                                                    </div>
+                                        aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel1">
+                                                        Диалоговое окно 1</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Здесь можете разместить текст или контент для первой
+                                                    кнопки.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary waves-effect waves-light"
+                                                        data-bs-dismiss="modal">Закрыть</button>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="modal fade" id="myModal2" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel2">
-                                                            Диалоговое окно 2</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Здесь можете разместить текст или контент для второй
-                                                        кнопки.
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Закрыть</button>
-                                                    </div>
+                                    <div class="modal fade" id="myModal2" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel2">
+                                                        Диалоговое окно 2</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Здесь можете разместить текст или контент для второй
+                                                    кнопки.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary waves-effect waves-light"
+                                                        data-bs-dismiss="modal">Закрыть</button>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="modal fade" id="myModal3" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel2">
-                                                            Диалоговое окно 3</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Здесь можете разместить текст или контент для второй
-                                                        кнопки.
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Закрыть</button>
-                                                    </div>
+                                    <div class="modal fade" id="myModal3" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel2">
+                                                        Диалоговое окно 3</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Здесь можете разместить текст или контент для второй
+                                                    кнопки.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary waves-effect waves-light"
+                                                        data-bs-dismiss="modal">Закрыть</button>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="modal fade" id="myModal4" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel2">
-                                                            Диалоговое окно 4</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Здесь можете разместить текст или контент для второй
-                                                        кнопки.
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Закрыть</button>
-                                                    </div>
+                                    <div class="modal fade" id="myModal4" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel2">
+                                                        Диалоговое окно 4</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Здесь можете разместить текст или контент для второй
+                                                    кнопки.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary waves-effect waves-light"
+                                                        data-bs-dismiss="modal">Закрыть</button>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="modal fade" id="myModal5" tabindex="-1"
-                                            aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                            <div class="modal-dialog">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel2">
-                                                            Диалоговое окно 5</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                            aria-label="Close"></button>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                        Здесь можете разместить текст или контент для второй
-                                                        кнопки.
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Закрыть</button>
-                                                    </div>
+                                    <div class="modal fade" id="myModal5" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel2" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel2">
+                                                        Диалоговое окно 5</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Здесь можете разместить текст или контент для второй
+                                                    кнопки.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button"
+                                                        class="btn btn-outline-primary waves-effect waves-light"
+                                                        data-bs-dismiss="modal">Закрыть</button>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
                                 </tbody>
                             </table>
                         </div>

@@ -9,30 +9,24 @@
     <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
     <meta content="Themesbrand" name="author" />
     <!-- App favicon -->
-    <link rel="shortcut icon" href="../assets/images/favicon.ico">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico">
 
 
     <!-- Bootstrap Css -->
-    <link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- App Css-->
-    <link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
     <!-- DataTables -->
-    <link href="../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet"
+    <link href="/assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet"
         type="text/css" />
 
     <!-- Responsive datatable examples -->
-    <link href="../assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
+    <link href="/assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet"
         type="text/css" />
-
-
     <!-- Bootstrap Css -->
-    <link href="../assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
-    <!-- Icons Css -->
-    <link href="../assets/css/icons.min.css" rel="stylesheet" type="text/css" />
-    <!-- App Css-->
-    <link href="../assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
+    <link href="/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -61,13 +55,13 @@
                                     id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                     <img class="rounded-circle header-profile-user"
-                                        src="../assets/images/users/avatar-2.jpg" alt="Header Avatar">
-                                    <span class="d-none d-xl-inline-block ms-1">Камол</span>
+                                        src="/assets/images/users/avatar-2.jpg" alt="Header Avatar">
+                                    <span class="d-none d-xl-inline-block ms-1">Админ</span>
                                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
 
-                                    <a class="dropdown-item text-danger" href="login.php"><i
+                                    <a class="dropdown-item text-danger" href="../login.php"><i
                                             class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
                                         Выйти</a>
                                 </div>
@@ -80,20 +74,20 @@
                             <div class="navbar-brand-box">
                                 <a href="index.php" class="logo logo-dark">
                                     <span class="logo-sm">
-                                        <img src="../assets/images/logo-sm.png" alt="" height="20">
+                                        <img src="/assets/images/logo-sm.png" alt="" height="20">
                                     </span>
                                     <span class="logo-lg">
-                                        <img src="../assets/images/logo-dark.png" alt="" height="17">
+                                        <img src="/assets/images/logo-dark.png" alt="" height="17">
                                     </span>
                                 </a>
 
                                 <a href="index.php" class="logo logo-light" style="margin-left: 65px;">
                                     <span class="logo-sm">
-                                        <img src="../assets/images/LogoEX.png" alt="" height="20"
+                                        <img src="/assets/images/LogoEX.png" alt="" height="55"
                                             style="border-radius: 50%;">
                                     </span>
                                     <span class="logo-lg">
-                                        <img src="../assets/images/LogoEX.png" alt="" height="57"
+                                        <img src="/assets/images/LogoEX.png" alt="" height="57"
                                             style="border-radius: 10%;">
                                     </span>
                                 </a>
@@ -105,22 +99,25 @@
                                 id="vertical-menu-btn">
                                 <i class="fa fa-fw fa-bars"></i>
                             </button>
+
+                            <!-- <h5 class="logo-text text-center text-white">"Управление персоналом в учебном заведении"</h5> -->
+
                         </div>
                     </div>
-            </header> <!-- ========== Left Sidebar Start ========== -->
+            </header>
             <div class="vertical-menu">
 
                 <div class="h-100">
 
                     <div class="user-wid text-center py-4">
                         <div class="user-img">
-                            <img src="../assets/images/users/avatar-2.jpg" alt=""
+                            <img src="/assets/images/users/avatar-2.jpg" alt=""
                                 class="avatar-md mx-auto rounded-circle">
                         </div>
 
                         <div class="mt-3">
 
-                            <a href="#" class="text-reset fw-medium font-size-16">Шарипов Камол</a>
+                            <a href="#" class="text-reset fw-medium font-size-16">ФИО Лирект</a>
                             <p class="text-muted mt-1 mb-0 font-size-13">Директор</p>
 
                         </div>
@@ -140,27 +137,43 @@
                             </li>
 
                             <li>
-                                <a href="employee.php" class="waves-effect">
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-group"></i>
                                     <span>Сотрудники</span>
                                 </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="dir-employee.php">Список сотрудников</a></li>
+                                </ul>
                             </li>
+
+
 
                             <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-paper-plane"></i>
-                                    <span>Заявки</span>
+                                    <span>Заявление</span>
                                 </a>
                                 <ul class="sub-menu" aria-expanded="false">
-                                    <li><a href="leave.php">Доступные заявки</a></li>
-                                    <li><a href="list-leave.php">Посмотреть список всех заявок</a></li>
+                                    <li><a href="leave.php">Посмотреть заявки</a></li>
+                                    <li><a href="list-leave.php">Список всех заявок</a></li>
                                 </ul>
                             </li>
 
                             <li>
-                                <a href="plan.php" class="waves-effect">
-                                    <i class="mdi mdi-airplay"></i>
+                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                    <i class="bx bx-task"></i>
                                     <span>План</span>
+                                </a>
+                                <ul class="sub-menu" aria-expanded="false">
+                                    <li><a href="approve-plan.php">Утвердить план</a></li>
+                                    <li><a href="plan.php">Текущий план</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="profile.php" class="waves-effect">
+                                    <i class="bx bxs-user-detail"></i>
+                                    <span>Профиль</span>
                                 </a>
                             </li>
 

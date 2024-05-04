@@ -16,7 +16,6 @@ require_once "header.php";
     </div>
     <!-- end page title -->
 
-
     <div class="row">
     <div class="col-lg-12">
         <div class="card">
@@ -54,10 +53,14 @@ require_once "header.php";
                         </tbody>
                     </table>
                 </div>
+                <div class="text-center mt-3"> <!-- Добавлен класс text-center -->
+                    <button id="submitData" class="btn btn-success waves-effect waves-light">Утвердить план</button> <!-- Кнопка для отправки данных -->
+                </div>
             </div>
         </div>
     </div>
 </div>
+
 
      
         

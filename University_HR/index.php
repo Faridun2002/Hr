@@ -69,10 +69,16 @@ require_once "header.php";
                                                 }
 
                                                 // SELECT query
-                                                $sql = "select r.Rating_Id as Id, IFNULL(e.Path_Photo, '') as Path, e.Full_Name as FullName,pos.Position_Name as Position,CONCAT(r.Credit_Done, '/', r.Credit_Full) as Credit,r.Rating from ratings r
-                                                left join employees e on r.Employee_Id = e.Employee_Id
-                                                left join positions pos on e.Employee_Id = pos.Position_Id
-                                                order by Rating desc";
+                                                $sql = "SELECT r.Rating_Id as Id, 
+                                                IFNULL(e.Path_Photo, '') as Path, 
+                                                e.Full_Name as FullName, 
+                                                deg.Degree_Name as Degree,
+                                                CONCAT(r.Credit_Done, '/', r.Credit_Full) as Credit,
+                                                r.Rating 
+                                         FROM ratings r
+                                         LEFT JOIN employees e ON r.Employee_Id = e.Employee_Id
+                                         LEFT JOIN degrees deg ON e.Degree_Id = deg.Degree_Id
+                                         ORDER BY Rating DESC;";
 
                                                 // Execute query
                                                 $result = $conn->query($sql);
@@ -97,7 +103,7 @@ require_once "header.php";
                                                             "       </div>".
                                                             "   </div>".
                                                             "    </td>".
-                                                            "   <td class='align-middle'>".$row["Position"]."</td>".
+                                                            "   <td class='align-middle'>".$row["Degree"]."</td>".
                                                             "   <td class='align-middle'>".$row["Credit"]."</td>".
                                                             "   <td class='align-middle'>".$row["Rating"]."</td>".
                                                             "</tr>";
