@@ -57,9 +57,9 @@
 
 
 <!-- Table Editable plugin -->
-<script src="assets/libs/table-edits/build/table-edits.min.js"></script>
+<script src="/assets/libs/table-edits/build/table-edits.min.js"></script>
 
-<script src="assets/js/pages/table-editable.int.js"></script>
+<script src="/assets/js/pages/table-editable.int.js"></script>
 
 <!-- App js -->
 

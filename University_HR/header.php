@@ -1,3 +1,24 @@
+
+<?php 
+    session_start();
+    if( empty($_SESSION["email_emp"]) ){
+        header("Location: ./login.php");
+    }
+
+    require_once "conn.php";
+
+    $sql_command = "SELECT * FROM employees WHERE Username = '$_SESSION[email_emp]' ";
+    $result = mysqli_query($conn , $sql_command);
+
+    if( mysqli_num_rows($result) > 0){
+       while( $rows = mysqli_fetch_assoc($result) ){
+        $name = ucwords($rows["full_name"]);
+            $dp = $rows["dp"];     
+            $position = $rows["position"]; 
+       }
+}
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -61,7 +82,7 @@
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
 
-                                    <a class="dropdown-item text-danger" href="login.php"><i
+                                    <a class="dropdown-item text-danger" href="../Role/login.php"><i
                                             class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
                                         Выйти</a>
                                 </div>

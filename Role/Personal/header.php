@@ -1,3 +1,32 @@
+
+<?php 
+    session_start();
+    if( empty($_SESSION["Username"]) ){
+        header("Location: ./login.php");
+    }
+
+    require_once "conn.php";
+
+    $sql_command = "SELECT e.*, p.Position_Name, e.Path_Photo 
+    FROM employees e 
+    INNER JOIN positions p ON e.Position_Id = p.Position_Id 
+    WHERE e.Username = '{$_SESSION['Username']}'";
+
+
+$result = mysqli_query($conn, $sql_command);
+
+if (mysqli_num_rows($result) > 0) {
+while ($rows = mysqli_fetch_assoc($result)) {
+$Full_Name = ucwords($rows["Full_Name"]);
+$Position_Name = $rows["Position_Name"];    
+$Path_Photo = $rows["Path_Photo"];   
+}
+}
+?>
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -55,8 +84,8 @@
                                     id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                     <img class="rounded-circle header-profile-user"
-                                        src="/assets/images/users/avatar-2.jpg" alt="Header Avatar">
-                                    <span class="d-none d-xl-inline-block ms-1">ФИО</span>
+                                        src="upload/<?php if(!empty($Path_Photo)){ echo $Path_Photo; }else{ echo "1.jpg"; } ?>" alt="Header Avatar">
+                                    <span class="d-none d-xl-inline-block ms-1"><?php echo $Full_Name; ?></span>
                                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-end">
@@ -111,14 +140,14 @@
 
                     <div class="user-wid text-center py-4">
                         <div class="user-img">
-                            <img src="/assets/images/users/avatar-2.jpg" alt=""
+                            <img src="upload/<?php if(!empty($Path_Photo)){ echo $Path_Photo; }else{ echo "1.jpg"; } ?>" alt=""
                                 class="avatar-md mx-auto rounded-circle">
                         </div>
 
                         <div class="mt-3">
 
-                            <a href="#" class="text-reset fw-medium font-size-16">ФИО</a>
-                            <p class="text-muted mt-1 mb-0 font-size-13">Сотрудник</p>
+                            <a href="#" class="text-reset fw-medium font-size-16"><?php echo $Full_Name; ?></a>
+                            <p class="text-muted mt-1 mb-0 font-size-13"><?php echo $Position_Name; ?></p>
 
                         </div>
                     </div>
