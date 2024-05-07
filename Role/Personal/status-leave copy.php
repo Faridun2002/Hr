@@ -18,7 +18,7 @@ $Username = $_SESSION["Username"];
 $sql = "SELECT * FROM employee_leave";
 
 $result = mysqli_query($conn, $sql);
-$i=1;
+
 ?>
 
 <div class="main-content">
@@ -87,7 +87,7 @@ $i=1;
 
                                             echo "</td>";
                                             echo "</tr>";
-                                            $i++;
+                                            $leave_id++;
                                         }
                                     }
                                     ?>

@@ -187,7 +187,7 @@ $Path_Photo = $rows["Path_Photo"];
                                 </ul>
                             </li>
                           
-                            <li>
+                            <!-- <li>
                                 <a href="javascript: void(0);" class="has-arrow waves-effect">
                                     <i class="bx bx-list-check"></i>
                                     <span>Обучение</span>
@@ -197,7 +197,7 @@ $Path_Photo = $rows["Path_Photo"];
                                     <li><a href="anketirovanie.php">Анкетирование</a></li>
                                     <li><a href="attestaticy.php">Аттестация</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
 
                             <li>
                                 <a href="profile.php" class="waves-effect">

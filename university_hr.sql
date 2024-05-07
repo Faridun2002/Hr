@@ -51,9 +51,9 @@ CREATE TABLE `degrees` (
 insert  into `degrees`(`Degree_Id`,`Degree_Name`) values 
 (1,'Бакалавриат'),
 (2,'Магистратура'),
-(3,'Доктор философии PhD'),
-(4,'Степень ассоциата'),
-(5,'Diploma');
+(3,'Доктор философии'),
+(4,'Степень ассоциата');
+
 
 /*Table structure for table `departments` */
 
