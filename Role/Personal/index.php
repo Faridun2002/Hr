@@ -32,7 +32,7 @@ if (mysqli_num_rows($result) > 0) {
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">Панель приборов</h4>
+                    <h4 class="page-title mb-0 font-size-18">Рейтинг</h4>
 
                 </div>
             </div>
@@ -85,6 +85,7 @@ if (mysqli_num_rows($result) > 0) {
                     </div>
                 </div>
             </div>
+            
             <?php
 require_once "footer.php";
 ?>

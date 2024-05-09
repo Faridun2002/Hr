@@ -9,7 +9,7 @@ require_once "header.php";
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">Панель приборов</h4>
+                    <h4 class="page-title mb-0 font-size-18">Рейтинг</h4>
 
                 </div>
             </div>
@@ -25,21 +25,29 @@ require_once "header.php";
 
                             <div class="btn-group mb-3 d-flex justify-content-end">
                                 <button type="button" class="btn btn-primary filterBtn" data-filter="all">Все</button>
+                              
                                 <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Преподаватели">Профессор</button>
-                                <button type="button" class="btn btn-primary filterBtn" data-filter="Доктор наук">Доктор
-                                    наук</button>
-                                <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Доценты">Доцент</button>
+                                    data-filter="Кандидат физико-математических наук,Доцент">Кандидат физико-математических наук,Доцент</button>
 
                                 <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Ассистент">Ассистент</button>
+                                    data-filter="Кандидат технических наук,Доцент">Кандидат технических наук,Доцент</button>
 
                                 <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Старшый преподователь">Старшый преподователь</button>
+                                    data-filter="Доктор экономических наук,Профессор">Доктор экономических
+                                    наук,Профессор</button>
 
                                 <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Старший преподователь">Преподователь</button>
+                                    data-filter="Кандидат экономических наук,Доцент">Кандидат экономических
+                                    наук,Доцент</button>
+
+                          <button type="button" class="btn btn-primary filterBtn"
+                                    data-filter="Бакалавриат">Бакалавриат</button>
+                                <button type="button" class="btn btn-primary filterBtn"
+                                    data-filter="Магистратура">Магистратура</button>
+                        
+                                <button type="button" class="btn btn-primary filterBtn"
+                                    data-filter="Степень ассоциата">Степень ассоциата</button>
+
 
                                 <button type="button" class="btn btn-primary filterBtn" data-filter="Без степени">Без
                                     степени</button>
@@ -69,10 +77,16 @@ require_once "header.php";
                                                 }
 
                                                 // SELECT query
-                                                $sql = "select r.Rating_Id as Id, IFNULL(e.Path_Photo, '') as Path, e.Full_Name as FullName,pos.Position_Name as Position,CONCAT(r.Credit_Done, '/', r.Credit_Full) as Credit,r.Rating from ratings r
-                                                left join employees e on r.Employee_Id = e.Employee_Id
-                                                left join positions pos on e.Employee_Id = pos.Position_Id
-                                                order by Rating desc";
+                                                $sql = "SELECT r.Rating_Id as Id, 
+                                                IFNULL(e.Path_Photo, '') as Path, 
+                                                e.Full_Name as FullName, 
+                                                deg.Degree_Name as Degree,
+                                                CONCAT(r.Credit_Done, '/', r.Credit_Full) as Credit,
+                                                r.Rating 
+                                         FROM ratings r
+                                         LEFT JOIN employees e ON r.Employee_Id = e.Employee_Id
+                                         LEFT JOIN degrees deg ON e.Degree_Id = deg.Degree_Id
+                                         ORDER BY Rating DESC;";
 
                                                 // Execute query
                                                 $result = $conn->query($sql);
@@ -83,21 +97,21 @@ require_once "header.php";
                                                     while ($row = $result->fetch_assoc()) {
                                                         $count++;
                                                         if ($row["Path"] == "") {
-                                                            $row["Path"]= "user.jpg";
+                                                            $row["Path"]= "1.jpg";
                                                         }
                                                         echo "<tr>".
                                                             "   <td class='align-middle'>".$count."</td>".
                                                             "   <td class='align-middle'>".
                                                             "   <div class='d-flex align-items-center'>".
                                                             "       <div class='me-4'> ".
-                                                            "           <img src='Photo/".$row["Path"]."' alt='' class='avatar-sm rounded-circle'>".
+                                                            "           <img src='../Personal/upload/".$row["Path"]."' alt='' class='avatar-sm rounded-circle'>".
                                                             "       </div>".
                                                             "       <div>".
                                                             "           <h5 class='font-size-16 mb-1'>".$row["FullName"]."</h5>".
                                                             "       </div>".
                                                             "   </div>".
                                                             "    </td>".
-                                                            "   <td class='align-middle'>".$row["Position"]."</td>".
+                                                            "   <td class='align-middle'>".$row["Degree"]."</td>".
                                                             "   <td class='align-middle'>".$row["Credit"]."</td>".
                                                             "   <td class='align-middle'>".$row["Rating"]."</td>".
                                                             "</tr>";

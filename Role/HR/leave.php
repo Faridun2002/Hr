@@ -98,12 +98,22 @@ echo $Username;
 
                                         </td>
                                         <td>
-                                            <?php  
+                                        <?php  
     if ($status == 'В ожидании') {
         echo "<a href='accept-leave.php?leave_id={$leave_id}' class='btn btn-success waves-effect waves-light'>Принять</a>";
         echo "<a href='cancel-leave.php?leave_id={$leave_id}' class='btn btn-danger waves-effect waves-light'>Отклонить</a>";
     } else {
-        echo $status; // Показать статус, если он не "ожидает"
+        if ($status == 'На рассмотрении директора') {
+            echo "<span class='status-accepted'>На рассмотрении директора</span>";
+        } 
+        // Если заявка отклонена
+        else if ($status == 'Отклонено') {
+            echo "<span class='status-rejected'>Отклонено</span>";
+        }
+        // Показать статус, если он не "ожидает" или "на рассмотрении директора"
+        else {
+            echo $status;
+        }
     }
     ?>
                                         </td>

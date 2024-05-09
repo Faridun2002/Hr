@@ -160,8 +160,8 @@ $Path_Photo = $rows["Path_Photo"];
 
                             <li>
                                 <a href="index.php" class="waves-effect">
-                                    <i class="mdi mdi-airplay"></i>
-                                    <span>Панель приборов</span>
+                                    <i class="bx bx-bar-chart-alt-2"></i>
+                                    <span>Рейтинг</span>
                                 </a>
                             </li>
                             <li>

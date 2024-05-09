@@ -108,21 +108,30 @@ echo $Username;
 
                                         </td>
                                         <td>
-                                            <?php  
-    if ($status == 'В ожидании') {
-        echo "<a href='accept-leave.php?leave_id={$leave_id}' class='btn btn-success waves-effect waves-light'>Принять</a>";
-        echo "<a href='cancel-leave.php?leave_id={$leave_id}' class='btn btn-danger waves-effect waves-light'>Отклонить</a>";
-    } else {
-        if ($status == 'Принято') {
-            echo "<span class='status-accepted'>Принято</span>";
-        } 
-        // Если заявка отклонена
-        else if ($status == 'Отклонено') {
-            echo "<span class='status-rejected'>Отклонено</span>";
-        }// Показать статус, если он не "ожидает"
+                                        <?php  
+if ($status == 'В ожидании') {
+    echo "<span class='status'>В ожидании</span>";
+
+} 
+ else {
+    if ($status == 'Принято') {
+        echo "<span class='status-accepted'>Принять</span>";
+    } 
+    // Если заявка отклонена
+    else if ($status == 'Отклонено') {
+        echo "<span class='status-rejected'>Отклонено</span>";
     }
-    ?>
-                                        </td>
+
+    else if ($status == 'На рассмотрении директора') {
+        echo "<span>На рассмотрении директора</span>";
+    }
+    // Если заявка на рассмотрении директора
+    
+    // Показать статус, если он не "ожидает"
+}
+?>
+</td>
+
                                     </tr>
                                     <?php 
                     $i++;

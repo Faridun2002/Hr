@@ -126,7 +126,7 @@ if ($stmt) {
                             <div class="text-center">
                                 <div class="d-flex justify-content-center align-items-center">
                                     <div class="position-relative">
-                                        <img src="upload/<?php if(!empty($Path_Photo)){ echo $Path_Photo; }else{ echo "1.jpg"; } ?>" alt=""
+                                        <img src="../Personal/upload/<?php if(!empty($Path_Photo)){ echo $Path_Photo; }else{ echo "1.jpg"; } ?>" alt=""
                                             class="avatar-lg mx-auto img-thumbnail rounded-circle"
                                             style="width: 150px; height: 150px;">
                                         <div class="online-circle"

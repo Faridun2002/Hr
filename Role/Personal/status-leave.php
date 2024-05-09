@@ -101,19 +101,26 @@ echo $Username;
 
                                         </td>
                                         <td>
-                                            <?php  
-     if ($status == 'В ожидании') {
-        echo "<span class='status'>В ожидании</span>";
-    } else {
-        if ($status == 'Принято') {
-            echo "<span class='status-accepted'>Принято</span>";
-        } 
-        // Если заявка отклонена
-        else if ($status == 'Отклонено') {
-            echo "<span class='status-rejected'>Отклонено</span>";
-        }// Показать статус, если он не "ожидает"
+                                        <?php  
+if ($status == 'В ожидании') {
+    echo "<span class='status'>В ожидании</span>";
+
+} else if ($status == 'На рассмотрении директора') {
+    echo "<span class=''>На рассмотрении директора</span>";
+} else {
+    if ($status == 'Принято') {
+        echo "<span class='status-accepted'>Принять</span>";
+    } 
+    // Если заявка отклонена
+    else if ($status == 'Отклонено') {
+        echo "<span class='status-rejected'>Отклонено</span>";
     }
-    ?>
+    // Если заявка на рассмотрении директора
+    
+    // Показать статус, если он не "ожидает"
+}
+?>
+
                                         </td>
                                     </tr>
                                     <?php 

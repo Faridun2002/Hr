@@ -81,7 +81,7 @@ $Path_Photo = $rows["Path_Photo"];
                                     id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
                                     aria-expanded="false">
                                     <img class="rounded-circle header-profile-user"
-                                        src="upload/<?php if(!empty($Path_Photo)){ echo $Path_Photo; }else{ echo "1.jpg"; } ?>" alt="Header Avatar">
+                                        src="../Personal/upload/<?php if(!empty($Path_Photo)){ echo $Path_Photo; }else{ echo "1.jpg"; } ?>" alt="Header Avatar">
                                     <span class="d-none d-xl-inline-block ms-1"><?php echo $Full_Name; ?></span>
                                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                                 </button>
@@ -137,7 +137,7 @@ $Path_Photo = $rows["Path_Photo"];
 
                     <div class="user-wid text-center py-4">
                         <div class="user-img">
-                            <img src="upload/<?php if(!empty($Path_Photo)){ echo $Path_Photo; }else{ echo "1.jpg"; } ?>" alt=""
+                            <img src="../Personal/upload/<?php if(!empty($Path_Photo)){ echo $Path_Photo; }else{ echo "1.jpg"; } ?>" alt=""
                                 class="avatar-md mx-auto rounded-circle">
                         </div>
 
@@ -158,8 +158,8 @@ $Path_Photo = $rows["Path_Photo"];
 
                             <li>
                                 <a href="index.php" class="waves-effect">
-                                    <i class="mdi mdi-airplay"></i>
-                                    <span>Панель приборов</span>
+                                    <i class="bx bx-bar-chart-alt-2"></i>
+                                    <span>Рейтинг</span>
                                 </a>
                             </li>
 
