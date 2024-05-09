@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if ($result) {
                 // Успешно добавлено
                 $reason = $startdate = $enddate = "";
-                header("Location: index.php"); // Перенаправление на другую страницу
+                header("Location: status-leave.php"); // Перенаправление на другую страницу
                 exit(); // Важно завершить выполнение скрипта после пе
             } else {
                 // Ошибка при выполнении запроса
