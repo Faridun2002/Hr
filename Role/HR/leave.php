@@ -2,6 +2,41 @@
 require_once "header.php";
 ?>
 
+<?php
+session_start();
+
+if (empty($_SESSION["Username"])) {
+    header("Location: ./login.php");
+    exit();
+}
+
+
+$Username = $_SESSION["Username"];
+//  database connection
+require_once "conn.php";
+
+// $sql = "SELECT leave_id, full_name, reason, start_date, end_date, comments, status  FROM employee_leave";
+
+$sql = "SELECT * FROM employee_leave WHERE status = 'В ожидании'";
+
+
+$result = mysqli_query($conn , $sql);
+
+$i = 1;
+echo $Username;
+
+?>
+
+<style>
+    #commentText {
+        word-wrap: break-word; /* Для поддержки переноса слов */
+        overflow-wrap: break-word; /* Альтернативное свойство для поддержки переноса слов */
+        overflow-y: auto; /* Если текст слишком большой, добавляется вертикальный скролл */
+        max-height: 300px; /* Опционально: ограничиваем высоту блока, чтобы избежать слишком больших модальных окон */
+    }
+</style>
+
+
 <div class="main-content">
 
     <div class="page-content">
@@ -37,234 +72,49 @@ require_once "header.php";
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                    if (mysqli_num_rows($result) > 0) {
+                                        while ($rows = mysqli_fetch_assoc($result)) {
+                                            $start_date = $rows["start_date"];
+                                            $end_date = $rows["end_date"];
+                                            $fullname = $rows["full_name"];
+                                            $reason = $rows["reason"];
+                                            $comments = $rows["comments"];
+                                            $status = ($rows["status"] == "В ожидании") ? "В ожидании" : $rows["status"];
+                                            $leave_id = $rows["leave_id"];    
+                                            ?>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Ааааааааа Бббббббббб</td>
-                                        <td>Командировка</td>
-                                        <td>12.22.22</td>
-                                        <td>12.33.22</td>
+                                        <th scope="row"><?php echo "$i."; ?></th>
+                                        <td><?php echo $fullname; ?></td>
+                                        <td><?php echo $reason; ?></td>
+                                        <td><?php echo $start_date; ?></td>
+                                        <td><?php echo $end_date; ?></td>
                                         <td>
-                                            <button type="button" class="btn btn-primary  align-middle me-2"
-                                                data-bs-toggle="modal" data-bs-target="#myModal1">
+                                            <button type="button" class="btn btn-primary view-comments"
+                                                data-bs-toggle="modal" data-bs-target="#myModal<?php echo $leave_id; ?>"
+                                                data-comment="<?php echo htmlspecialchars($comments); ?>">
                                                 Посмотреть
                                             </button>
-                                        </td>
 
-                                        <td> <button type="button" class="btn btn-success waves-effect waves-light">
-                                                <i class="bx bx-check-double font-size-14 align-middle"></i>
-                                                Принять
-                                            </button>
-                                            <button type="button" class="btn btn-danger waves-effect waves-light">
-                                                <i class="bx bx-block font-size-14 align-middle"></i>
-                                                Отклонить
-                                            </button>
+                                        </td>
+                                        <td>
+                                            <?php  
+    if ($status == 'В ожидании') {
+        echo "<a href='accept-leave.php?leave_id={$leave_id}' class='btn btn-success waves-effect waves-light'>Принять</a>";
+        echo "<a href='cancel-leave.php?leave_id={$leave_id}' class='btn btn-danger waves-effect waves-light'>Отклонить</a>";
+    } else {
+        echo $status; // Показать статус, если он не "ожидает"
+    }
+    ?>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Ааааааааа Бббббббббб</td>
-                                        <td>Командировка</td>
-                                        <td>12.22.22</td>
-                                        <td>12.33.22</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary  align-middle me-2"
-                                                data-bs-toggle="modal" data-bs-target="#myModal2">
-                                                Посмотреть
-                                            </button>
-                                        </td>
-                                        <td> <button type="button" class="btn btn-success waves-effect waves-light">
-                                                <i class="bx bx-check-double font-size-14 align-middle"></i>
-                                                Принять
-                                            </button>
-                                            <button type="button" class="btn btn-danger waves-effect waves-light">
-                                                <i class="bx bx-block font-size-14 align-middle"></i>
-                                                Отклонить
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Ааааааааа Бббббббббб</td>
-                                        <td>Командировка</td>
-                                        <td>12.22.22</td>
-                                        <td>12.33.22</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary  align-middle me-2"
-                                                data-bs-toggle="modal" data-bs-target="#myModal3">
-                                                Посмотреть
-                                            </button>
-                                        </td>
-                                        <td> <button type="button" class="btn btn-success waves-effect waves-light">
-                                                <i class="bx bx-check-double font-size-14 align-middle"></i>
-                                                Принять
-                                            </button>
-                                            <button type="button" class="btn btn-danger waves-effect waves-light">
-                                                <i class="bx bx-block font-size-14 align-middle"></i>
-                                                Отклонить
-                                            </button>
-                                        </td>
-
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Ааааааааа Бббббббббб</td>
-                                        <td>Командировка</td>
-                                        <td>12.22.22</td>
-                                        <td>12.33.22</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary  align-middle me-2"
-                                                data-bs-toggle="modal" data-bs-target="#myModal4">
-                                                Посмотреть
-                                            </button>
-                                        </td>
-                                        <td> <button type="button" class="btn btn-success waves-effect waves-light">
-                                                <i class="bx bx-check-double font-size-14 align-middle"></i>
-                                                Принять
-                                            </button>
-                                            <button type="button" class="btn btn-danger waves-effect waves-light">
-                                                <i class="bx bx-block font-size-14 align-middle"></i>
-                                                Отклонить
-                                            </button>
-                                        </td>
-
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Ааааааааа Бббббббббб</td>
-                                        <td>Командировка</td>
-                                        <td>12.22.22</td>
-                                        <td>12.33.22</td>
-                                        <td>
-                                            <button type="button" class="btn btn-primary  align-middle me-2"
-                                                data-bs-toggle="modal" data-bs-target="#myModal5">
-                                                Посмотреть
-                                            </button>
-                                        </td>
-                                        <td> <button type="button" class="btn btn-success waves-effect waves-light">
-                                                <i class="bx bx-check-double font-size-14 align-middle"></i>
-                                                Принять
-                                            </button>
-                                            <button type="button" class="btn btn-danger waves-effect waves-light">
-                                                <i class="bx bx-block font-size-14 align-middle"></i>
-                                                Отклонить
-                                            </button>
-                                        </td>
-
-                                    </tr>
-
-
-                                    <div class="modal fade" id="myModal1" tabindex="-1"
-                                        aria-labelledby="exampleModalLabel1" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel1">
-                                                        Диалоговое окно 1</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Здесь можете разместить текст или контент для первой
-                                                    кнопки.
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary waves-effect waves-light"
-                                                        data-bs-dismiss="modal">Закрыть</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="modal fade" id="myModal2" tabindex="-1"
-                                        aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel2">
-                                                        Диалоговое окно 2</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Здесь можете разместить текст или контент для второй
-                                                    кнопки.
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary waves-effect waves-light"
-                                                        data-bs-dismiss="modal">Закрыть</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="modal fade" id="myModal3" tabindex="-1"
-                                        aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel2">
-                                                        Диалоговое окно 3</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Здесь можете разместить текст или контент для второй
-                                                    кнопки.
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary waves-effect waves-light"
-                                                        data-bs-dismiss="modal">Закрыть</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="modal fade" id="myModal4" tabindex="-1"
-                                        aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel2">
-                                                        Диалоговое окно 4</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Здесь можете разместить текст или контент для второй
-                                                    кнопки.
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary waves-effect waves-light"
-                                                        data-bs-dismiss="modal">Закрыть</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="modal fade" id="myModal5" tabindex="-1"
-                                        aria-labelledby="exampleModalLabel2" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel2">
-                                                        Диалоговое окно 5</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    Здесь можете разместить текст или контент для второй
-                                                    кнопки.
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button"
-                                                        class="btn btn-outline-primary waves-effect waves-light"
-                                                        data-bs-dismiss="modal">Закрыть</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php 
+                    $i++;
+                }
+            } else {
+                echo "<tr><td colspan='7' class='text-center'>Заявление не найдены</td></tr>";
+            }
+            ?>
                                 </tbody>
                             </table>
                         </div>
@@ -272,9 +122,45 @@ require_once "header.php";
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
 
+    <!-- Модальное окно для комментариев -->
+    <div class="modal fade" id="commentModal" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Комментария</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="commentText">
+           
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-primary waves-effect waves-light"
+                        data-bs-dismiss="modal">Закрыть</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var viewButtons = document.querySelectorAll('.view-comments');
+        var modalCommentText = document.getElementById('commentText');
 
-            <?php 
+        viewButtons.forEach(function(button) {
+            button.addEventListener('click', function() {
+                var commentText = this.getAttribute('data-comment');
+                modalCommentText.innerHTML = commentText;
+                $('#commentModal').modal('show');
+            });
+        });
+    });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <?php 
 require_once "footer.php";
 ?>
