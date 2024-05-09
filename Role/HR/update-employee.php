@@ -104,27 +104,27 @@ $selectedUserRoleID = $userRoleId;
                                 <input type="text" class="form-control" name="place_of_birth"
                                     value="<?php echo $placeOfBirth; ?>" required placeholder="Введите место рождения">
                             </div>
-                            <select class="form-select" name="position_id" required>
-                                <?php
-    // Выбираем все должности из таблицы positions
-    $sqlPositions = "SELECT Position_Id, Position_Name FROM positions";
-    $resultPositions = mysqli_query($conn, $sqlPositions);
 
-    // Проверяем, есть ли результаты
-    if (mysqli_num_rows($resultPositions) > 0) {
-        // Выводим каждую должность как опцию в выпадающем списке
-        while ($rowPosition = mysqli_fetch_assoc($resultPositions)) {
-            // Проверяем, является ли текущая должность выбранной
-            if ($rowPosition['Position_Id'] == $selectedPositionId) {
-                echo "<option value='" . $rowPosition['Position_Id'] . "' selected>" . $rowPosition['Position_Name'] . "</option>";
-            } else {
-                echo "<option value='" . $rowPosition['Position_Id'] . "'>" . $rowPosition['Position_Name'] . "</option>";
-            }
+                            <div class="mb-3">
+                                <label class="form-label">Должность</label>
+
+                            <select class="form-select" name="position_id" required>
+                            <?php
+$sqlPositions = "SELECT Position_Id, Position_Name FROM positions";
+$resultPositions = mysqli_query($conn, $sqlPositions);
+
+if (mysqli_num_rows($resultPositions) > 0) {
+    while ($rowPosition = mysqli_fetch_assoc($resultPositions)) {
+        if ($rowPosition['Position_Id'] == $selectedPositionId) {
+            echo "<option value='" . $rowPosition['Position_Id'] . "' selected>" . $rowPosition['Position_Name'] . "</option>";
+        } else {
+            echo "<option value='" . $rowPosition['Position_Id'] . "'>" . $rowPosition['Position_Name'] . "</option>";
         }
-    } else {
-        echo "<option disabled>Нет доступных должностей</option>";
     }
-    ?>
+} else {
+    echo "<option disabled>Нет доступных должностей</option>";
+}
+?>
                             </select>
 
 
@@ -218,28 +218,24 @@ $selectedUserRoleID = $userRoleId;
                                 <label class="form-label">Роль пользователя</label>
 
                                 <select class="form-select" name="user_role_id" required>
-                                    <?php
-    // Выбираем все роли пользователей из таблицы user_roles
-    $sqlUserRoles = "SELECT User_Role_Id, User_Type FROM user_roles";
-    $resultUserRoles = mysqli_query($conn, $sqlUserRoles);
+                                <?php
+$sqlUserRoles = "SELECT User_Role_Id, User_Type FROM user_roles";
+$resultUserRoles = mysqli_query($conn, $sqlUserRoles);
 
-    // Проверяем, есть ли результаты
-    if (mysqli_num_rows($resultUserRoles) > 0) {
-        // Выводим каждую роль пользователя как опцию в выпадающем списке
-        while ($rowUserRole = mysqli_fetch_assoc($resultUserRoles)) {
-            // Проверяем, является ли текущая роль пользователя выбранной
-            if ($rowUserRole['User_Role_Id'] == $selectedUserRoleID) {
-                echo "<option value='" . $rowUserRole['User_Role_Id'] . "' selected>" . $rowUserRole['User_Type'] . "</option>";
-            } else {
-                echo "<option value='" . $rowUserRole['User_Role_Id'] . "'>" . $rowUserRole['User_Type'] . "</option>";
-            }
+if (mysqli_num_rows($resultUserRoles) > 0) {
+    while ($rowUserRole = mysqli_fetch_assoc($resultUserRoles)) {
+        if ($rowUserRole['User_Role_Id'] == $selectedUserRoleID) {
+            echo "<option value='" . $rowUserRole['User_Role_Id'] . "' selected>" . $rowUserRole['User_Type'] . "</option>";
+        } else {
+            echo "<option value='" . $rowUserRole['User_Role_Id'] . "'>" . $rowUserRole['User_Type'] . "</option>";
         }
-    } else {
-        echo "<option disabled>Нет доступных ролей пользователей</option>";
     }
-    ?>
-                                </select>
+} else {
+    echo "<option disabled>Нет доступных ролей пользователей</option>";
+}
+?>
 
+                                </select>
 
                             </div>
                             <div class="mb-3">
@@ -260,7 +256,25 @@ $selectedUserRoleID = $userRoleId;
                                     value="<?php echo $employeeNumber; ?>" required
                                     placeholder="Введите табельный номер">
                             </div>
-                            <!--                             <div class="mb-3">
+               
+
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-block">Сохранить</button>
+                                <a href="edit-employee.php" class="btn btn-danger waves-effect waves-light">Назад</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <?php 
+require_once "footer.php"; 
+?>
+
+             <!--                             <div class="mb-3">
                                 <label class="form-label">Логин</label>
                                 <input type="text" class="form-control" required placeholder="Введите логин">
                             </div>
@@ -279,20 +293,3 @@ $selectedUserRoleID = $userRoleId;
                                 <div class="col-12">
                                     <button class="btn btn-success">Сохранить</button>
                                 </div> -->
-
-                            <div class="col-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-block">Сохранить</button>
-                            </div>
-                            <div class="col-12 text-center">
-                            <button class="btn btn-danger waves-effect waves-light"><a href="index.php"> </a>Назад</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php 
-require_once "footer.php"; 
-?>

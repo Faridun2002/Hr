@@ -71,8 +71,7 @@ echo $Username;
                                         <th>Дата начало</th>
                                         <th>Дата окончания</th>
                                         <th>Комментария</th>
-                                        <th class="text-center">Статус<i
-                                                class="bx bx-loader bx-spin font-size-16 align-middle me-2"></i></th>
+                                        <th class="text-center">Статус</th>
                                     </tr>
                                 </thead>
                                 <tbody>
