@@ -10,15 +10,18 @@ if (empty($_SESSION["Username"])) {
     exit();
 }
 
-require_once "conn.php";
 
 $Username = $_SESSION["Username"];
+//  database connection
+require_once "conn.php";
 
-// Запрос для получения данных о заявках на отпуск для текущего пользователя
-$sql = "SELECT * FROM employee_leave";
+$sql = "SELECT * FROM employee_leave WHERE Username = '$Username'";
 
-$result = mysqli_query($conn, $sql);
-$i=1;
+$result = mysqli_query($conn , $sql);
+
+$i = 1;
+echo $Username;
+
 ?>
 
 <div class="main-content">
@@ -71,11 +74,11 @@ $i=1;
                                             $fullname = $rows["full_name"];
                                             $reason = $rows["reason"];
                                             $comments = $rows["comments"];
-                                            $status = $rows["status"];
+                                            $status = ($rows["status"] == "В ожидании") ? "В ожидании" : $rows["status"];
                                             $leave_id = $rows["leave_id"];
 
                                             echo "<tr>";
-                                            echo "<td>$leave_id</td>";
+                                            echo "<td>$i</td>";
                                             echo "<td>$fullname</td>";
                                             echo "<td>$reason</td>";
                                             echo "<td>$start_date</td>";
