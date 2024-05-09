@@ -145,7 +145,7 @@ CREATE TABLE `employees` (
 /*Data for the table `employees` */
 
 insert  into `employees`(`Employee_Id`,`Full_Name`,`Date_of_Birth`,`Place_of_Birth`,`Position_Id`,`Degree_Id`,`Faculty_Id`,`Department_Id`,`User_Role_Id`,`Email`,`Phone_Number`,`Employee_Number`,`Date_Added`,`Path_Photo`,`Username`,`Password`) values 
-(1,'Максудов Хуршед Темурович','1958-09-20','Исфара',1,5,1,2,5,'jane.smith@example.com','987-654-3210','EMP002','2023-01-02','663c7ff4ed90f9.91883190.png','maksudov','maksudov'),
+(1,'Максудов Хуршед Темурович','1958-09-20','Исфара',1,5,1,2,5,'jane.smith@example.com','987-654-3210','EMP002','2023-01-02','663cd88bf02598.65872519.png','maksudov','maksudov'),
 (2,'Худойбердиев Хуршед Атохонович','1980-04-10','Исфара',2,5,1,2,2,'khudoyberdiev@gmail.com','111-222-3333','EMP003','2023-01-03','663c7fba8b7588.46532569.png','khudoyberdiev','khudoyberdiev'),
 (3,'Ашурова Шабнам Нуруллоевна','2024-04-26','asda',4,1,1,2,2,'sdasd@gasd.com','12312','1231','2024-04-26','663c803e9e5b85.90505652.png','ashurova','ashurova'),
 (4,'Назаров Абдусамад Абдурахмонович','2024-04-26','12312',4,1,1,2,2,'21eqwew@sdas.fdg','12312','12312','2024-04-26','663c80530c1ff6.67552740.png','nazarov','nazarov'),

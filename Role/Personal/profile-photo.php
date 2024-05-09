@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (in_array($extension, $allowed_types)) {
         $new_file_name = uniqid("", true) . '.' . $extension;
-        $location = "upload/" . $new_file_name;
+        $location = "../Personal/upload/" . $new_file_name;
         if (move_uploaded_file($temp_loc, $location)) {
             require_once "conn.php";
             $sql = "UPDATE employees SET Path_Photo = '$new_file_name' WHERE Username = '$_SESSION[Username]' ";
