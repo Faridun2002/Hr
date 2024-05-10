@@ -80,45 +80,7 @@ require_once "header.php";
                                         </td>
                                     </tr>
 
-                                    <tr>
-                                        <th scope="row">4</th>
-                                        <td>Аъзои гурӯхи кории Шӯрои олимони донишгоҳ</td>
-                                        <td>0.833</td>
-                                        <td>20 соат барои 1 комиссия (фармоиши ректор)</td>
-                                        <!-- Новый столбец с чекбоксом -->
-                                        <td class="text-center">
-                                            <label class="checkbox-wrapper">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">5</th>
-                                        <td>Аъзои Шӯрои методии донишгоҳ</td>
-                                        <td>1.250</td>
-                                        <td>30 соат (фармоиши ректор)</td>
-                                        <td class="text-center">
-                                            <label class="checkbox-wrapper">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </td>
-                                        <!-- Новый столбец с чекбоксом -->
-
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">6</th>
-                                        <td>Аъзои Шӯрои методии факултет ва гурӯхҳои кории факултет</td>
-                                        <td>0.833</td>
-                                        <td>20 соат (фармоиши ректор)</td>
-                                        <td class="text-center">
-                                            <label class="checkbox-wrapper">
-                                                <input type="checkbox">
-                                                <span class="checkmark"></span>
-                                            </label>
-                                        </td>
-                                    </tr>
+                                   
 
                                 </tbody>
                             </table>

@@ -35,34 +35,61 @@ require_once "header.php";
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
-                        <h3>Добавить вакансию</h3>
-                        <table id="vacanciesTable" class="table">
-                            <thead>
-                                <tr data-id="1">
-                                    <td>Вакансия 1</td>
-                                    <td>Описание вакансии 1</td>
-                                    <td>Требования кандидатов 1</td>
-                                    <td>1000$</td>
-                                    <td>Город 1</td>
-                                    <td>
-                                        <a href="edit-vacansies.php"
-                                            class="btn btn-sm btn-primary editVacancyButton">Редактировать</a>
-                                    </td>
-                                </tr>
-                                <tr data-id="2">
-                                    <td>Вакансия 2</td>
-                                    <td>Описание вакансии 2</td>
-                                    <td>Требования кандидатов 2</td>
-                                    <td>2000$</td>
-                                    <td>Город 2</td>
-                                    <td>
-                                        <a href="edit-vacansies.php"
-                                            class="btn btn-sm btn-primary editVacancyButton">Редактировать</a>
-                                    </td>
-                                </tr>
-                                </tbody>
-                        </table>
-                    </div>
+                        <h3>Обновить вакансию</h3>
+                  
+                            <?php
+// Подключение к базе данных
+require_once "conn.php";
+
+// SQL-запрос для извлечения данных о вакансиях
+$sql = "SELECT * FROM vacancies";
+$result = $conn->query($sql);
+
+// Переменная для отслеживания номера порядка
+$counter = 1;
+
+// Вывод данных в HTML-таблицу
+if ($result->num_rows > 0) {
+    echo "<table id=\"vacanciesTable\" class=\"table\">";
+    echo "<thead>";
+    echo "<tr>";
+    echo "<th>№</th>";
+    echo "<th>Название вакансии</th>";
+    echo "<th>Описание вакансии</th>";
+    echo "<th>Требования</th>";
+    echo "<th>Зарплата</th>";
+    echo "<th>Местоположения</th>";
+    echo "</tr>";
+    echo "</thead>";
+    echo "<tbody>";
+
+    while ($row = $result->fetch_assoc()) {
+        echo "<tr data-id='" . $row['Vacancy_Id'] . "'>";
+        echo "<td>" . $counter . "</td>";
+        echo "<td>" . $row['Vacancy_Title'] . "</td>";
+        echo "<td>" . $row['Description'] . "</td>";
+        echo "<td>" . $row['Requirements'] . "</td>";
+        echo "<td>" . $row['Salary'] . "</td>";
+        echo "<td>" . $row['Location'] . "</td>";
+        echo "<td>";
+        echo "<a href='edit-vacancies.php?Vacancy_Id=" . $row['Vacancy_Id'] . "' class='btn btn-sm btn-primary editVacancyButton'>Редактировать</a>";
+        echo "</td>";
+        echo "</tr>";
+
+        // Увеличение счетчика на 1
+        $counter++;
+    }
+
+    echo "</tbody>";
+    echo "</table>";
+} else {
+    echo "0 результатов";
+}
+
+// Закрытие подключения
+$conn->close();
+?>
+                  </div>
                 </div>
             </div>
         </div>
