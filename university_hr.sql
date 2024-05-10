@@ -16,25 +16,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`university_hr` /*!40100 DEFAULT CHARACT
 
 USE `university_hr`;
 
-/*Table structure for table `admin` */
-
-DROP TABLE IF EXISTS `admin`;
-
-CREATE TABLE `admin` (
-  `Admin_Id` int NOT NULL,
-  `Email` varchar(255) DEFAULT NULL,
-  `Password` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`Admin_Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
-
-/*Data for the table `admin` */
-
-insert  into `admin`(`Admin_Id`,`Email`,`Password`) values 
-(1,'admin1@example.com','password1'),
-(2,'admin2@example.com','password2'),
-(3,'admin3@example.com','password3'),
-(4,'admin4@example.com','password4'),
-(5,'admin5@example.com','password5');
 
 /*Table structure for table `degrees` */
 
@@ -53,14 +34,14 @@ insert  into `degrees`(`Degree_Id`,`Degree_Name`) values
 (2,'Магистратура'),
 (3,'Доктор философии'),
 (4,'Кандидат физико-математических наук'),
-(5,'Кандидат физико-математических наук,Доцент'),
+(5,'Кандидат физико-математических наук, доцент'),
 (6,'Кандидат технических наук'),
-(7,'Кандидат технических наук,Доцент'),
-(8,'Доктор экономических наук,Профессор'),
+(7,'Кандидат технических наук, доцент'),
+(8,'Доктор экономических наук, профессор'),
 (9,'Кандидат экономических наук'),
-(10,'Кандидат экономических наук,Доцент'),
+(10,'Кандидат экономических наук, доцент'),
 (11,'Кандидат химических наук'),
-(12,'Кандидат химических наук,Доцент'),
+(12,'Кандидат химических наук, доцент'),
 (13,'Кандидат филологических наук'),
 (14,'Степень ассоциата');
 
@@ -350,29 +331,22 @@ insert  into `user_roles`(`User_Role_Id`,`User_Type`) values
 DROP TABLE IF EXISTS `vacancies`;
 
 CREATE TABLE `vacancies` (
-  `Vacancy_Id` int NOT NULL,
-  `Position_Id` int DEFAULT NULL,
-  `Description` text,
-  `Faculty_Id` int DEFAULT NULL,
-  `Department_Id` int DEFAULT NULL,
-  `Requirement` text,
-  `Salary` decimal(10,2) DEFAULT NULL,
-  `Publication_Date` date DEFAULT NULL,
-  `Vacancy_Status` varchar(50) DEFAULT NULL,
-  `Employment_Type` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`Vacancy_Id`),
-  KEY `Position_Id` (`Position_Id`),
-  CONSTRAINT `vacancies_ibfk_1` FOREIGN KEY (`Position_Id`) REFERENCES `positions` (`Position_Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `Vacancy_Id` int NOT NULL AUTO_INCREMENT,
+  `Vacancy_Title` varchar(255) NOT NULL,
+  `Description` text NOT NULL,
+  `Requirements` text NOT NULL,
+  `Salary` decimal(10,2) NOT NULL,
+  `Location` varchar(255) NOT NULL,
+  `Created_At` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`Vacancy_Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 
 /*Data for the table `vacancies` */
 
-insert  into `vacancies`(`Vacancy_Id`,`Position_Id`,`Description`,`Faculty_Id`,`Department_Id`,`Requirement`,`Salary`,`Publication_Date`,`Vacancy_Status`,`Employment_Type`) values 
-(1,1,'Professor of Computer Science',1,1,'PhD in Computer Science required',80000.00,'2024-04-01','Open','Full-time'),
-(2,2,'Associate Professor of Fine Arts',2,2,'Master in Fine Arts required',60000.00,'2024-04-02','Open','Full-time'),
-(3,3,'Assistant Professor of English Literature',3,3,'Bachelor in English Literature required',50000.00,'2024-04-03','Open','Full-time'),
-(4,4,'Researcher in Mechanical Engineering',4,4,'Bachelor in Mechanical Engineering required',55000.00,'2024-04-04','Open','Part-time'),
-(5,5,'Lecturer in Medicine',5,5,'Doctor of Medicine required',70000.00,'2024-04-05','Open','Full-time');
+insert  into `vacancies`(`Vacancy_Id`,`Vacancy_Title`,`Description`,`Requirements`,`Salary`,`Location`,`Created_At`) values 
+(1,'Backend разработчик','Мы ищем опытного Backend разработчика для создания и поддержки серверной части веб-приложений.','Опыт работы с языками программирования: PHP, Python, Java, etc.\r\nЗнание SQL и опыт работы с базами данных (MySQL, PostgreSQL, MongoDB).\r\nПонимание принципов архитектуры веб-приложений.\r\nУмение работать в команде и готовность обучаться новым технологиям.',5000.00,'Худжанд','2024-05-10 07:47:50'),
+(2,'Frontend разработчик','Мы ищем опытного Frontend разработчика для создания интерфейсов пользовательских веб-приложений.','Знание HTML, CSS и JavaScript.\r\nОпыт работы с фреймворками и библиотеками, такими как React, Vue.js или Angular.\r\nУмение работать с макетами и прототипами интерфейсов.\r\nПонимание основ UX/UI дизайна.',4500.00,'Худжанд','2024-05-10 07:50:05'),
+(3,'Администратор Базы Данных','Мы ищем опытного администратора баз данных для обеспечения надежности, производительности и безопасности баз данных.','Знание SQL и опыт работы с реляционными и NoSQL базами данных (MySQL, PostgreSQL, MongoDB, etc.).\r\nОпыт администрирования баз данных и оптимизации их производительности.\r\nНавыки резервного копирования, восстановления и обеспечения безопасности данных.\r\nУмение разрабатывать и поддерживать процедуры мониторинга и отчетности.',5500.00,'Худжанд','2024-05-10 07:51:01');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

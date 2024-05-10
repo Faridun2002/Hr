@@ -12,17 +12,18 @@
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-        <link href="../styles/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
 
-        <link href="../styles/css/bootstrap-icons.css" rel="stylesheet">
-        <link href="../styles/css/owl.carousel.min.css" rel="stylesheet">
-        <link href="../styles/css/owl.theme.default.min.css" rel="stylesheet">
-        <link href="../styles/css/tooplate-gotto-job.css" rel="stylesheet">
+    <link href="../styles/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="../styles/css/bootstrap-icons.css" rel="stylesheet">
+    <link href="../styles/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="../styles/css/owl.theme.default.min.css" rel="stylesheet">
+    <link href="../styles/css/tooplate-gotto-job.css" rel="stylesheet">
 
     <!--
 
@@ -110,7 +111,7 @@ if (isset($_GET['vacancy_id'])) {
         // Если данные найдены, вывести их в соответствующих полях HTML
         $row = mysqli_fetch_assoc($result);
         ?>
-        
+
         <!-- HTML разметка -->
         <section class="job-section section-padding pb-0">
             <div class="container">
@@ -140,8 +141,17 @@ if (isset($_GET['vacancy_id'])) {
                                 Требования
                             </h5>
                             <ul>
-                                <li><?php echo $row['Requirements']; ?></li>
+                                <?php 
+    // Разбиваем строку требований на массив по символу перевода строки
+    $requirements_list = explode("\n", $row['Requirements']);
+    
+    // Выводим каждый элемент массива как отдельный пункт списка
+    foreach ($requirements_list as $requirement) {
+        echo "<li>$requirement</li>";
+    }
+    ?>
                             </ul>
+
                             <div class="text-center">
                                 <button id="applicationButton1" class="btn btn-primary">Подать заявку</button>
                             </div>
@@ -150,7 +160,7 @@ if (isset($_GET['vacancy_id'])) {
                 </div>
             </div>
         </section>
-        
+
         <!-- Конец HTML разметки -->
 
         <?php
@@ -169,37 +179,40 @@ mysqli_close($conn);
 
     </main>
 
-    
-    <div class="site-footer-bottom text-center">
-    <div class="container">
-        <div class="row align-items-center justify-content-center">
 
-            <div class="col-lg-4 col-12">
-                <p class="copyright-text">ХПИТТУ © 2024</p>
+    <div class="site-footer-bottom text-center">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+
+                <div class="col-lg-4 col-12">
+                    <p class="copyright-text">ХПИТТУ © 2024</p>
+                </div>
             </div>
         </div>
+        <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center"
+            href="#top"></a>
     </div>
-    <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center" href="#top"></a>
-</div>
 
-<script>
+    <script>
+    document.getElementById("applicationButton1").addEventListener("click", function() {
+        window.open(
+            "https://docs.google.com/forms/d/e/1FAIpQLSdLiomYy5fefJzV0OykrYPcDfgptvgkoplGoo2M3MoBLMrLbA/viewform?usp=sf_link",
+            "_blank");
+    });
 
-document.getElementById("applicationButton1").addEventListener("click", function() {
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdLiomYy5fefJzV0OykrYPcDfgptvgkoplGoo2M3MoBLMrLbA/viewform?usp=sf_link", "_blank");
-});
-
-document.getElementById("applicationButton2").addEventListener("click", function() {
-    window.open("https://docs.google.com/forms/d/e/1FAIpQLSdLiomYy5fefJzV0OykrYPcDfgptvgkoplGoo2M3MoBLMrLbA/viewform?usp=sf_link", "_blank");
-});
-
-</script>
+    document.getElementById("applicationButton2").addEventListener("click", function() {
+        window.open(
+            "https://docs.google.com/forms/d/e/1FAIpQLSdLiomYy5fefJzV0OykrYPcDfgptvgkoplGoo2M3MoBLMrLbA/viewform?usp=sf_link",
+            "_blank");
+    });
+    </script>
 
     <!-- JAVASCRIPT FILES -->
     <script src="../styles/js/jquery.min.js"></script>
-        <script src="../styles/js/bootstrap.min.js"></script>
-        <script src="../styles/js/owl.carousel.min.js"></script>
-        <script src="../styles/js/counter.js"></script>
-        <script src="../styles/js/custom.js"></script>
+    <script src="../styles/js/bootstrap.min.js"></script>
+    <script src="../styles/js/owl.carousel.min.js"></script>
+    <script src="../styles/js/counter.js"></script>
+    <script src="../styles/js/custom.js"></script>
 
 </body>
 

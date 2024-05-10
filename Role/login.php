@@ -33,7 +33,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ){
     
             // Проверка роли пользователя
             if ($rows["User_Role_Id"] === "1") {
-                header("Location: ../University_HR/index.php");
+                header("Location: Admin/index.php?login-sucess");
                 exit;
             } elseif ($rows["User_Role_Id"] === "5") {
                 header("Location: Director/index.php?login-sucess");
