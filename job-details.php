@@ -94,68 +94,76 @@ Bootstrap 5 HTML CSS Template
         </header>
 
 
+        <?php
+// Подключение к базе данных
+require_once "conn.php";
+
+// Получение ID вакансии из URL
+if (isset($_GET['vacancy_id'])) {
+    $vacancy_id = $_GET['vacancy_id'];
+
+    // Запрос к базе данных для получения данных о вакансии по ID
+    $sql = "SELECT * FROM vacancies WHERE Vacancy_Id = $vacancy_id";
+    $result = mysqli_query($conn, $sql);
+
+    if (mysqli_num_rows($result) > 0) {
+        // Если данные найдены, вывести их в соответствующих полях HTML
+        $row = mysqli_fetch_assoc($result);
+        ?>
+        
+        <!-- HTML разметка -->
         <section class="job-section section-padding pb-0">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-12 col-12">
-                        <h2 class="job-title mb-0">Программист</h2>
-
+                        <h2 class="job-title mb-0"><?php echo $row['Vacancy_Title']; ?></h2>
                         <div class="job-thumb job-thumb-detail">
                             <div class="d-flex flex-wrap align-items-center border-bottom pt-lg-3 pt-2 pb-3 mb-4">
                                 <p class="job-location mb-0">
                                     <i class="custom-icon bi-geo-alt me-1"></i>
-                                    Худжанд
+                                    <?php echo $row['Location']; ?>
                                 </p>
-
                                 <p class="job-date mb-0">
                                     <i class="custom-icon bi-clock me-1"></i>
-                                    10 часов назад
+                                    <?php echo $row['Created_At']; ?>
                                 </p>
-
                                 <p class="job-price mb-0">
                                     <i class="custom-icon bi-cash me-1"></i>
-                                    4000 сомони
+                                    <?php echo $row['Salary']; ?>
                                 </p>
-
-
                             </div>
-
                             <h4 class="mt-4 mb-2">
                                 Описание вакансии
                             </h4>
-
-                            <p>ТЕКСТ тЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ тЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ тЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ тЕКСТ ТЕКСТ
-                                ТЕКСТ
-                                ТЕКСТ тЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ тЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ тЕКСТ ТЕКСТ ТЕКСТ ТЕКСТ тЕКСТ
-                                ТЕКСТ ТЕКСТ
-                            </p>
-
-                            <!--  -->
-
+                            <p><?php echo $row['Description']; ?></p>
                             <h5 class="mt-4 mb-3">
                                 Требования
                             </h5>
-
                             <ul>
-                                <li>ТЕКСТ ТЕКСт</li>
-
-                                <li>ТЕКСТ ТЕКСт</li>
-
-                                <li>ТЕКСТ ТЕКСт</li>
+                                <li><?php echo $row['Requirements']; ?></li>
                             </ul>
-
                             <div class="text-center">
-    <button id="applicationButton1" class="btn btn-primary">Подать заявку</button>
-</div>
-
+                                <button id="applicationButton1" class="btn btn-primary">Подать заявку</button>
+                            </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </section>
+        
+        <!-- Конец HTML разметки -->
+
+        <?php
+    } else {
+        echo "Вакансия не найдена.";
+    }
+} else {
+    echo "ID вакансии не указано в URL.";
+}
+
+// Закрытие соединения с базой данных
+mysqli_close($conn);
+?>
 
 
 

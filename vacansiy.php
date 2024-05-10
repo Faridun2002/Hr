@@ -116,116 +116,59 @@ Bootstrap 5 HTML CSS Template
                         </div>
 
                         <div class="col-lg-12 col-12">
-                            <div class="job-thumb d-flex">
-                                <div class="job-image-wrap bg-white shadow-lg">
-                                    <img src="images/logos/" class="job-image img-fluid" alt="">
-                                </div>
+                          
 
-                                <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                                    <div class="mb-3">
-                                        <h4 class="job-title mb-lg-0">
-                                            <a href="job-details.php" class="job-title-link">Программист</a>
-                                        </h4>
+                        <?php
+require_once "conn.php"; // Подключение к базе данных
 
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <p class="job-location mb-0">
-                                                <i class="custom-icon bi-geo-alt me-1"></i>
-                                                Худжанд
-                                            </p>
+// Выполнение запроса к таблице vacancies
+$sql = "SELECT * FROM vacancies";
+$result = mysqli_query($conn, $sql);
 
-                                            <p class="job-date mb-0">
-                                                <i class="custom-icon bi-clock me-1"></i>
-                                                10 часов назад
-                                            </p>
+// Проверка наличия данных
+if (mysqli_num_rows($result) > 0) {
+    // Вывод данных о вакансиях
+    while ($row = mysqli_fetch_assoc($result)) {
+        // Здесь вы можете использовать данные для заполнения соответствующих элементов на странице
+        echo '<div class="job-thumb d-flex">';
+        echo '<div class="job-image-wrap bg-white shadow-lg">';
+        echo '<img src="assets/images/LogoEX.png" class="job-image img-fluid" alt="">';
+        echo '</div>';
+        echo '<div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">';
+        echo '<div class="mb-3">';
+        echo '<h4 class="job-title mb-lg-0">';
+        echo '<a href="job-details.php?vacancy_id=' . $row["Vacancy_Id"] . '" class="job-title-link">' . $row["Vacancy_Title"] . '</a>';
+        echo '</h4>';
+        echo '<div class="d-flex flex-wrap align-items-center">';
+        echo '<p class="job-location mb-0">';
+        echo '<i class="custom-icon bi-geo-alt me-1"></i>';
+        echo $row["Location"];
+        echo '</p>';
+        echo '<p class="job-date mb-0">';
+        echo '<i class="custom-icon bi-clock me-1"></i>';
+        echo $row["Created_At"];
+        echo '</p>';
+        echo '<p class="job-price mb-0">';
+        echo '<i class="custom-icon bi-cash me-1"></i>';
+        echo $row["Salary"];
+        echo '</p>';
+        echo '</div>';
+        echo '</div>';
+        echo '<div class="job-section-btn-wrap">';
+        echo '<button id="applicationButton" class="btn btn-primary">Подать заявку</button>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+    }
+} else {
+    echo "Нет доступных вакансий.";
+}
 
-                                            <p class="job-price mb-0">
-                                                <i class="custom-icon bi-cash me-1"></i>
-                                                4000 сомони
-                                            </p>
-
-                                            
-                                        </div>
-                                    </div>
-
-                                    <div class="job-section-btn-wrap">
-                                    <button id="applicationButton1" class="btn btn-primary">Подать заявку</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="job-thumb d-flex">
-                                <div class="job-image-wrap bg-white shadow-lg">
-                                    <img src="images/logos" class="job-image img-fluid" alt="">
-                                </div>
-
-                                <div class="job-body d-flex flex-wrap flex-auto align-items-center ms-4">
-                                    <div class="mb-3">
-                                        <h4 class="job-title mb-lg-0">
-                                            <a href="job-details.php" class="job-title-link">Бухгалтер</a>
-                                        </h4>
-
-                                        <div class="d-flex flex-wrap align-items-center">
-                                            <p class="job-location mb-0">
-                                                <i class="custom-icon bi-geo-alt me-1"></i>
-                                                Худжанд
-                                            </p>
-
-                                            <p class="job-date mb-0">
-                                                <i class="custom-icon bi-clock me-1"></i>
-                                                1 день назад
-                                            </p>
-
-                                            <p class="job-price mb-0">
-                                                <i class="custom-icon bi-cash me-1"></i>
-                                                3000 сомоин
-                                            </p>
-
-                                 
-                                        </div>
-                                    </div>
-
-                                    <div class="job-section-btn-wrap">
-                                    <button id="applicationButton2" class="btn btn-primary">Подать заявку</button>
-                                    </div>
-                                </div>
-                            </div>
+// Закрытие соединения с базой данных
+mysqli_close($conn);
+?>
 
 
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination justify-content-center mt-5">
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Previous">
-                                            <span aria-hidden="true">Наз</span>
-                                        </a>
-                                    </li>
-
-                                    <li class="page-item active" aria-current="page">
-                                        <a class="page-link" href="#">1</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">2</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">3</a>
-                                    </li>
-
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">4</a>
-                                    </li>
-
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">5</a>
-                                    </li>
-                                    
-                                    <li class="page-item">
-                                        <a class="page-link" href="#" aria-label="Next">
-                                            <span aria-hidden="true">Дальше</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
                         </div>
 
                     </div>
@@ -269,3 +212,40 @@ document.getElementById("applicationButton2").addEventListener("click", function
 
     </body>
 </html>
+
+
+                            <!-- <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center mt-5">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">Наз</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item active" aria-current="page">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">4</a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">5</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">Дальше</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav> -->
