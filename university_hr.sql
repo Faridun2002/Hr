@@ -16,7 +16,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`university_hr` /*!40100 DEFAULT CHARACT
 
 USE `university_hr`;
 
-
 /*Table structure for table `degrees` */
 
 DROP TABLE IF EXISTS `degrees`;
@@ -43,7 +42,8 @@ insert  into `degrees`(`Degree_Id`,`Degree_Name`) values
 (11,'Кандидат химических наук'),
 (12,'Кандидат химических наук, доцент'),
 (13,'Кандидат филологических наук'),
-(14,'Степень ассоциата');
+(14,'Степень ассоциата'),
+(15,'Без степени');
 
 /*Table structure for table `departments` */
 
@@ -121,19 +121,19 @@ CREATE TABLE `employees` (
   CONSTRAINT `employees_ibfk_3` FOREIGN KEY (`Faculty_Id`) REFERENCES `faculties` (`Faculty_Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `employees_ibfk_4` FOREIGN KEY (`Department_Id`) REFERENCES `departments` (`Department_Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `employees_ibfk_5` FOREIGN KEY (`User_Role_Id`) REFERENCES `user_roles` (`User_Role_Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb3;
 
 /*Data for the table `employees` */
 
 insert  into `employees`(`Employee_Id`,`Full_Name`,`Date_of_Birth`,`Place_of_Birth`,`Position_Id`,`Degree_Id`,`Faculty_Id`,`Department_Id`,`User_Role_Id`,`Email`,`Phone_Number`,`Employee_Number`,`Date_Added`,`Path_Photo`,`Username`,`Password`) values 
-(1,'Максудов Хуршед Темурович','1958-09-20','Исфара',1,5,1,2,5,'jane.smith@example.com','987-654-3210','EMP002','2023-01-02','663cd88bf02598.65872519.png','maksudov','maksudov'),
-(2,'Худойбердиев Хуршед Атохонович','1980-04-10','Исфара',2,5,1,2,2,'khudoyberdiev@gmail.com','111-222-3333','EMP003','2023-01-03','663c7fba8b7588.46532569.png','khudoyberdiev','khudoyberdiev'),
-(3,'Ашурова Шабнам Нуруллоевна','2024-04-26','asda',4,1,1,2,2,'sdasd@gasd.com','12312','1231','2024-04-26','663c803e9e5b85.90505652.png','ashurova','ashurova'),
-(4,'Назаров Абдусамад Абдурахмонович','2024-04-26','12312',4,1,1,2,2,'21eqwew@sdas.fdg','12312','12312','2024-04-26','663c80530c1ff6.67552740.png','nazarov','nazarov'),
-(5,'Левандовский Богдан Игоревич ','2024-04-26','sda',1,1,1,1,2,'asdas@sda.com','12312','12312','2024-04-26',NULL,'levandovski','levandovski'),
-(6,'Солиев Одилходжа Махмудходжаевич','1977-04-01','Исфара',4,4,4,4,2,' osoliev@gmail.com','+992928373035','EMP004','2023-01-04','663c8154d97381.33705858.jpg','soliev','soliev'),
-(7,'Довудов Гулшан Мирбахоевич','1981-12-27','Исфара',2,1,1,2,2,'sada@gasd.csa','23123','12312','2024-04-26','663ca2541175f2.53483956.png','dovudov','dovudov'),
-(8,'Усмонова Мохина Рустамовна','1981-08-24','Хучанд',6,1,1,1,4,'sada@gasd.csa','23123','12312','2024-04-26',NULL,'usmonova','usmonova'),
+(1,'Максудов Хуршед Темурович','1958-09-20','Исфара',1,5,1,2,5,'jane.smith@example.com','987-654-3210','EMP002','2023-01-02','663cd88bf02598.65872519.png','Maksudov','Maksudov'),
+(2,'Худойбердиев Хуршед Атохонович','1980-04-10','Исфара',2,5,1,2,2,'khudoyberdiev@gmail.com','111-222-3333','EMP003','2023-01-03','663c7fba8b7588.46532569.png','Khudoyberdiev','Khudoyberdiev'),
+(3,'Ашурова Шабнам Нуруллоевна','2024-04-26','asda',4,15,1,2,2,'sdasd@gasd.com','12312','1231','2024-04-26','663c803e9e5b85.90505652.png','Ashurova','Ashurova'),
+(4,'Назаров Абдусамад Абдурахмонович','2024-04-26','12312',4,15,1,2,2,'21eqwew@sdas.fdg','12312','12312','2024-04-26','663c80530c1ff6.67552740.png','Nazarov','Nazarov'),
+(5,'Левандовский Богдан Игоревич ','2024-04-26','sda',1,2,1,1,2,'asdas@sda.com','12312','12312','2024-04-26',NULL,'Levandovski','Levandovski'),
+(6,'Солиев Одилходжа Махмудходжаевич','1977-04-01','Исфара',4,6,4,4,2,' osoliev@gmail.com','+992928373035','EMP004','2023-01-04','663c8154d97381.33705858.jpg','Soliev','Soliev'),
+(7,'Довудов Гулшан Мирбахоевич','1981-12-27','Исфара',2,1,1,2,2,'sada@gasd.csa','23123','12312','2024-04-26','663ca2541175f2.53483956.png','Dovudov','Dovudov'),
+(8,'Усмонова Мохина Рустамовна','1981-08-24','Хучанд',6,1,1,1,4,'sada@gasd.csa','23123','12312','2024-04-26',NULL,'Usmonova','Usmonova'),
 (9,'Косимов Абдунаби Абдурауфович','2024-04-26','ТЕмст',2,1,1,2,2,'sada@gasd.csa','23123','12312','2024-04-26',NULL,'etse','ауыуаы'),
 (10,'Фозилова Мохирахон Музаффаровна','2024-04-26','wasd',1,3,3,1,2,'asasd@sdad.asd','123123','12312','2024-04-26',NULL,'qqqq','qqqq'),
 (11,'Хакимова Ольга Ренатовна ','2024-04-26','ывф',4,3,2,1,2,'asda@sdas.com','12312','2312','2024-04-26',NULL,'12wad','asd'),
@@ -183,7 +183,9 @@ insert  into `employees`(`Employee_Id`,`Full_Name`,`Date_of_Birth`,`Place_of_Bir
 (55,'Тошходжаев Насим Азимович ','2024-04-26','545445',2,1,3,1,2,'5454@gmasf.dfgd','54545','5454','2024-04-26',NULL,'45','454'),
 (56,'Хофизов Хофиз Раджабович','2024-04-26','3',5,2,1,5,1,'453@gs.fd','23','342','2024-04-26',NULL,'234','23'),
 (57,'Бобочонов Хуршеджон Аминчонович','2024-04-26','2222222222',2,4,2,2,3,'222222222@gas.gff','222','222','2024-04-26',NULL,'2','2'),
-(58,'Бобочонов Чурабой Чумабоевич','2024-04-26','2222222222',2,4,2,2,3,'222222222@gas.gff','222','222','2024-04-26',NULL,'2','2');
+(58,'Бобочонов Чурабой Чумабоевич','2024-04-26','2222222222',2,4,2,2,3,'222222222@gas.gff','222','222','2024-04-26',NULL,'2','2'),
+(73,'Admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Admin','Admin'),
+(74,'Саъдуллозода Шахриёр Саъдулло','1988-03-14','-',1,7,4,1,5,'sadullozoda@ttu.tj',' +992 (907) 743311','12345','2024-05-10','663e6dfcd72af1.48006805.png','Sadullozoda','Sadullozoda');
 
 /*Table structure for table `faculties` */
 
@@ -208,24 +210,26 @@ insert  into `faculties`(`Faculty_Id`,`Faculty_Name`) values
 DROP TABLE IF EXISTS `plans`;
 
 CREATE TABLE `plans` (
-  `Plan_Id` int NOT NULL,
+  `Plan_Id` int NOT NULL AUTO_INCREMENT,
   `Plan_Name` varchar(255) DEFAULT NULL,
-  `Plan_Credit` int DEFAULT NULL,
-  `Employee_Id` int NOT NULL,
-  `Status` int DEFAULT '0',
-  PRIMARY KEY (`Plan_Id`),
-  KEY `Employee_Id` (`Employee_Id`),
-  CONSTRAINT `plans_ibfk_1` FOREIGN KEY (`Employee_Id`) REFERENCES `employees` (`Employee_Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  `Comment` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `Plan_Credit` double DEFAULT NULL,
+  PRIMARY KEY (`Plan_Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb3;
 
 /*Data for the table `plans` */
 
-insert  into `plans`(`Plan_Id`,`Plan_Name`,`Plan_Credit`,`Employee_Id`,`Status`) values 
-(1,'Plan 1',3,1,0),
-(2,'Plan 2',4,2,0),
-(3,'Plan 3',5,1,0),
-(4,'Plan 4',2,2,0),
-(5,'Plan 5',2,1,0);
+insert  into `plans`(`Plan_Id`,`Plan_Name`,`Comment`,`Plan_Credit`) values 
+(1,'Аъзои гурӯхи кории Шӯрои олимони донишгоҳ','20 соат барои 1 комиссия (фармоиши ректор)',0.833),
+(2,'Аъзои Шӯрои методии донишгоҳ','30 соат (фармоиши ректор)',1.25),
+(3,'Аъзои Шӯрои методии факултет ва гурӯхҳои кории факултет','20 соат барои 1 комиссия (фармоиши ректор)',0.833),
+(4,'Аъзои Шӯрои олимони донишгоҳ','40 соат (фармоиши ректор)',1.667),
+(5,'Аъзои Шӯрои олимони факултет','50 соат барои 1 фан',1.25),
+(6,'Барномаи таълимии фан, ки аз ҷониби Вазорати маъориф ва илми ҶТ тасдиқ мешавад','60 соат барои 1 курс (сертификат)',2.083),
+(7,'Гузаштан аз курси такмили ихтисос ва бозомӯзӣ','60 соат барои 1 курс (сертификат)',2.5),
+(8,'Иштирок ба дарсҳои хамдигар','3 соат барои 1 дарс (тибқи ҷадвали кафедравӣ) Ду соат барои иштирок, як соат барои таҳлил ва пешниҳоди хулоса',0.125),
+(9,'Иштирок дар ташкил ва гузаронидани олимпиадаҳои фаннии хонандагон ва донишҷӯён','20 соат барои 1 фан (фармоиши ректор)',0.833),
+(10,'Коркарди курсҳои электронии таълимӣ барои таҳсилоти фосилавӣ','50 соат барои 1 фан (тавсияи ШТМ ДПДТТХ)',2.083);
 
 /*Table structure for table `positions` */
 

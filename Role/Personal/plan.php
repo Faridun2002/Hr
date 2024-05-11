@@ -1,5 +1,15 @@
 <?php 
 require_once "header.php";
+require_once "conn.php";
+// Подключение к базе данных (предположим, что у вас уже есть подключение $db)
+// Вам может потребоваться настроить параметры подключения
+
+// Запрос на получение планов из базы данных
+$sql = "SELECT * FROM plans";
+
+
+$result = mysqli_query($conn , $sql);
+
 ?>
 
 <div class="main-content">
@@ -23,12 +33,7 @@ require_once "header.php";
                     <div class="card-body">
                         <h3>Список планов</h3>
                         <div class="table-responsive">
-
-                            <h5 class="text-center">Учебный план 2024</h5>
-
-
                             <table class="table mb-0 table-bordered">
-                                <!-- Добавлен класс table-bordered -->
                                 <thead class="table-light">
                                     <tr>
                                         <th>№</th>
@@ -38,24 +43,17 @@ require_once "header.php";
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <th scope="row">1</th>
-                                        <td>Аъзои гурӯхи кории Шӯрои олимони донишгоҳ</td>
-                                        <td>0.833</td>
-                                        <td>20 соат барои 1 комиссия (фармоиши ректор)</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">2</th>
-                                        <td>Аъзои Шӯрои методии донишгоҳ</td>
-                                        <td>1.250</td>
-                                        <td>30 соат (фармоиши ректор)</td>
-                                    </tr>
-                                    <tr>
-                                        <th scope="row">3</th>
-                                        <td>Аъзои Шӯрои методии факултет ва гурӯхҳои кории факултет</td>
-                                        <td>0.833</td>
-                                        <td>20 соат (фармоиши ректор)</td>
-                                    </tr>
+                                    <?php 
+                                    // Цикл для вывода каждого плана из базы данных
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        echo "<tr>";
+                                        echo "<th scope='row'>" . $row['Plan_Id'] . "</th>";
+                                        echo "<td>" . $row['Plan_Name'] . "</td>";
+                                        echo "<td>" . $row['Plan_Credit'] . "</td>";
+                                        echo "<td>" . $row['Comment'] . "</td>";
+                                        echo "</tr>";
+                                    }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -63,9 +61,6 @@ require_once "header.php";
                 </div>
             </div>
         </div>
-
-
-
 
         <?php 
 require_once "footer.php";
