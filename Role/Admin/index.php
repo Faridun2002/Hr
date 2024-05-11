@@ -27,18 +27,18 @@ require_once "header.php";
                                 <button type="button" class="btn btn-primary filterBtn" data-filter="all">Все</button>
                               
                                 <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Кандидат физико-математических наук,Доцент">Кандидат физико-математических наук,Доцент</button>
+                                    data-filter="Кандидат физико-математических наук, доцент">Кандидат физико-математических наук, доцент</button>
 
                                 <button type="button" class="btn btn-primary filterBtn"
-                                    data-filter="Кандидат технических наук,Доцент">Кандидат технических наук,Доцент</button>
+                                    data-filter="Кандидат технических наук">Кандидат технических наук</button>
 
                                 <button type="button" class="btn btn-primary filterBtn"
                                     data-filter="Доктор экономических наук,Профессор">Доктор экономических
-                                    наук,Профессор</button>
+                                    наук, профессор</button>
 
                                 <button type="button" class="btn btn-primary filterBtn"
                                     data-filter="Кандидат экономических наук,Доцент">Кандидат экономических
-                                    наук,Доцент</button>
+                                    наук, доцент</button>
 
                           <button type="button" class="btn btn-primary filterBtn"
                                     data-filter="Бакалавриат">Бакалавриат</button>

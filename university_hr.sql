@@ -121,7 +121,7 @@ CREATE TABLE `employees` (
   CONSTRAINT `employees_ibfk_3` FOREIGN KEY (`Faculty_Id`) REFERENCES `faculties` (`Faculty_Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `employees_ibfk_4` FOREIGN KEY (`Department_Id`) REFERENCES `departments` (`Department_Id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `employees_ibfk_5` FOREIGN KEY (`User_Role_Id`) REFERENCES `user_roles` (`User_Role_Id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=74 DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB AUTO_INCREMENT=75 DEFAULT CHARSET=utf8mb3;
 
 /*Data for the table `employees` */
 
@@ -184,7 +184,7 @@ insert  into `employees`(`Employee_Id`,`Full_Name`,`Date_of_Birth`,`Place_of_Bir
 (56,'Хофизов Хофиз Раджабович','2024-04-26','3',5,2,1,5,1,'453@gs.fd','23','342','2024-04-26',NULL,'234','23'),
 (57,'Бобочонов Хуршеджон Аминчонович','2024-04-26','2222222222',2,4,2,2,3,'222222222@gas.gff','222','222','2024-04-26',NULL,'2','2'),
 (58,'Бобочонов Чурабой Чумабоевич','2024-04-26','2222222222',2,4,2,2,3,'222222222@gas.gff','222','222','2024-04-26',NULL,'2','2'),
-(73,'Admin',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Admin','Admin'),
+(73,'Admin','2024-05-11','2',1,1,1,1,1,'Admin@gmail.com','1111111','1','2024-05-11',NULL,'Admin','Admin'),
 (74,'Саъдуллозода Шахриёр Саъдулло','1988-03-14','-',1,7,4,1,5,'sadullozoda@ttu.tj',' +992 (907) 743311','12345','2024-05-10','663e6dfcd72af1.48006805.png','Sadullozoda','Sadullozoda');
 
 /*Table structure for table `faculties` */
